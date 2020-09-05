@@ -7,5 +7,6 @@ web:
     - .:/stay-safe
   links:
     - db
+  restart: on-failure
 db:
   image: mongo:3.0.2

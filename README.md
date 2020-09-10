@@ -8,3 +8,11 @@ If you haven't build yet:
 
 After that you just need to run:
 <pre><code>$ docker-compose up</code></pre>
+
+## Crawlers
+Enter the directory of the crawler uf wanted.
+If you haven't build yet:
+<pre><code>$ docker build -t crawler_uf .</code></pre>
+
+After that run:
+<pre><code>$ docker run crawler_uf scrapy crawl spider_name</code></pre>

@@ -31,3 +31,6 @@ After that you just need to set the command to run a job.
 To run a sh file at 2am of the first day of the month:
 <pre><code>0 2 1 * * /home/user/stay-safe/src/crawlers/df.sh</code></pre>
 To understand more about crontab schedule expressions click [here](https://crontab.guru)
+
+Every sh file must be in the correct permission, to set the correct permission run:
+<pre><code>chmod +x script-name-here.sh</code></pre>

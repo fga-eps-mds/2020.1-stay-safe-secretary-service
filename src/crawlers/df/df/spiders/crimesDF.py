@@ -2,13 +2,13 @@ import scrapy
 import urllib.request
 import datetime
 import os
-import ipdb
 import json
 
 class CrimesDF(scrapy.Spider):
     name = 'crimes'
     allowed_domains = "http://www.ssp.df.gov.br/"
     start_urls = ["http://www.ssp.df.gov.br/dados-por-regiao-administrativa/"]
+    cities = []
 
     def parse(self, response):
         crime_table = response.xpath(
@@ -17,6 +17,7 @@ class CrimesDF(scrapy.Spider):
         for i, city in enumerate(crime_table):
             if (i > 1):
                 city_name = city.xpath('./td[1]/strong/text()').get().replace('/', " ")
+                self.cities.append(city_name)
 
                 # Get a list of all tds of the row (collumns)
                 td_list = city.xpath('.//td')

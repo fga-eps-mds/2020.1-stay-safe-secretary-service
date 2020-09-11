@@ -16,3 +16,18 @@ If you haven't build yet:
 
 After that run:
 <pre><code>$ docker run crawler_uf scrapy crawl spider_name</code></pre>
+
+## Crontab
+Crontab is a time-based job scheduler in Unix-like operating systems, it doesn't need to install if you're using a Unix based SO.
+
+### Setting Crontab
+Enter the following command to edit your crontab file:
+<pre><code>$ crontab -e</code></pre>
+If it's empty you should set the first line of the file with:
+<pre><code>SHELL=/bin/bash</code></pre>
+After that you just need to set the command to run a job.
+
+#### Example
+To run a sh file at 2am of the first day of the month:
+<pre><code>0 2 1 * * /home/user/stay-safe/src/crawlers/df.sh</code></pre>
+To understand more about crontab schedule expressions click [here](https://crontab.guru)

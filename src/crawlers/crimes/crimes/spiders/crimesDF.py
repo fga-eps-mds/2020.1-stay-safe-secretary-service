@@ -1,8 +1,14 @@
-import scrapy
+"""
+Import scrapy and utils functions.
+"""
 import urllib.request
+import scrapy
 from utils.handle_folders import create_folder
 
 class CrimesDF(scrapy.Spider):
+    """
+    Spider of SSP-DF.
+    """
     name = 'crimes_df'
     allowed_domains = "http://www.ssp.df.gov.br/"
     start_urls = ["http://www.ssp.df.gov.br/dados-por-regiao-administrativa/"]
@@ -13,14 +19,18 @@ class CrimesDF(scrapy.Spider):
     }
 
     def parse(self, response):
+        """
+        Function to get all the excel files and save.
+        """
         crime_table = response.xpath(
             '/html/body/div[8]/div/div/div/div[2]/table[2]/tbody//tr')
 
         create_folder('data')
-        
+
         for i, city in enumerate(crime_table):
-            if (i > 1):
-                city_name = city.xpath('./td[1]/strong/text()').get().replace('/', " ")
+            if i > 1:
+                city_name = city.xpath(
+                    './td[1]/strong/text()').get().replace('/', " ")
                 self.data['cities'].append(city_name)
 
                 # Get a list of all tds of the row (collumns)
@@ -36,8 +46,10 @@ class CrimesDF(scrapy.Spider):
                         create_folder(f'data/{str(year)}')
                         self.data['years'].append(year)
 
-                    if(data_url is not None):
+                    if data_url is not None:
                         # Download and save the excel table
-                        urllib.request.urlretrieve(str(data_url), f'./data/{str(year)}/{city_name}.xlsx')
+                        urllib.request.urlretrieve(
+                            str(data_url),
+                            f'./data/{str(year)}/{city_name}.xlsx')
 
                     year += 1

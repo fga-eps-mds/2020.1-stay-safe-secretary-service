@@ -12,6 +12,9 @@ BOT_NAME = 'df'
 SPIDER_MODULES = ['df.spiders']
 NEWSPIDER_MODULE = 'df.spiders'
 
+MONGO_URI = "mongodb://localhost:27017"
+MONGO_DATABASE = "stay-safe"
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'df (+http://www.yourdomain.com)'

@@ -8,7 +8,11 @@ class CrimesDF(scrapy.Spider):
     name = 'crimes'
     allowed_domains = "http://www.ssp.df.gov.br/"
     start_urls = ["http://www.ssp.df.gov.br/dados-por-regiao-administrativa/"]
-    cities = []
+
+    data = {
+        'years': [],
+        'cities': [],
+    }
 
     def parse(self, response):
         crime_table = response.xpath(
@@ -17,7 +21,7 @@ class CrimesDF(scrapy.Spider):
         for i, city in enumerate(crime_table):
             if (i > 1):
                 city_name = city.xpath('./td[1]/strong/text()').get().replace('/', " ")
-                self.cities.append(city_name)
+                self.data['cities'].append(city_name)
 
                 # Get a list of all tds of the row (collumns)
                 td_list = city.xpath('.//td')
@@ -27,6 +31,9 @@ class CrimesDF(scrapy.Spider):
 
                 for j in range(16, len(td_list) + 1, 2):
                     data_url = city.xpath(f'./td[{j}]/a/@href').get()
+
+                    if year not in self.data['years']:
+                        self.data['years'].append(year)
 
                     if(data_url is not None):
                         # Download and save the excel table

@@ -1,14 +1,21 @@
 import pandas as pd
 from utils.handle_folders import delete_file 
 
-crimes_nature = ('LATROCÍNIO', 'ROUBO A TRANSEUNTE', 'ROUBO DE VEÍCULO', 'ROUBO EM RESIDÊNCIA', 'ESTUPRO', 'TRÁFICO DE DROGAS')
+crimes_nature = {
+    'LATROCÍNIO': "Latrocinio", 
+    'ROUBO A TRANSEUNTE': 'Roubo a Transeunte', 
+    'ROUBO DE VEÍCULO': 'Roubo de Veiculo', 
+    'ROUBO EM RESIDÊNCIA': 'Roubo de Residencia', 
+    'ESTUPRO': 'Estupro', 
+    'TRÁFICO DE DROGAS': 'Trafico de Entorpecentes',
+}
 
 def treat_extracted_data(filtered_crimes):
     city_data = []
 
     for key, value in filtered_crimes.items():
         type_crime = {}
-        type_crime['crime_nature'] = key
+        type_crime['crime_nature'] = crimes_nature[key]
         type_crime['quantity'] = int(float(value))
 
         city_data.append(type_crime)
@@ -27,7 +34,7 @@ def get_datas_from_excel(name, year):
         delete_file(f'data/{str(year)}', f'{name}.xlsx')
 
         # Filter dictionary by keeping elements whose keys are in crime_nature list 
-        filtered_crimes = dict(filter(lambda elem : elem[0] in crimes_nature, crimes.items()))
+        filtered_crimes = dict(filter(lambda elem : elem[0] in crimes_nature.keys(), crimes.items()))
 
         city_data = treat_extracted_data(filtered_crimes)
     

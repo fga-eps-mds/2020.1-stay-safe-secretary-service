@@ -3,7 +3,7 @@ import urllib.request
 from utils.handle_folders import create_folder
 
 class CrimesDF(scrapy.Spider):
-    name = 'crimes'
+    name = 'crimes_df'
     allowed_domains = "http://www.ssp.df.gov.br/"
     start_urls = ["http://www.ssp.df.gov.br/dados-por-regiao-administrativa/"]
 

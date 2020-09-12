@@ -1,8 +1,6 @@
 import scrapy
 import urllib.request
-import datetime
-import os
-import json
+from utils.handle_folders import create_folder
 
 class CrimesDF(scrapy.Spider):
     name = 'crimes'
@@ -17,6 +15,8 @@ class CrimesDF(scrapy.Spider):
     def parse(self, response):
         crime_table = response.xpath(
             '/html/body/div[8]/div/div/div/div[2]/table[2]/tbody//tr')
+
+        create_folder('data')
         
         for i, city in enumerate(crime_table):
             if (i > 1):
@@ -33,6 +33,7 @@ class CrimesDF(scrapy.Spider):
                     data_url = city.xpath(f'./td[{j}]/a/@href').get()
 
                     if year not in self.data['years']:
+                        create_folder(f'data/{str(year)}')
                         self.data['years'].append(year)
 
                     if(data_url is not None):

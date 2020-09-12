@@ -3,6 +3,7 @@ from utils.treat_dataDF import load_data
 import datetime
 import pymongo
 from scrapy.utils.project import get_project_settings
+from utils.handle_folders import delete_folder
 
 class DfPipeline:
     collection_name = "DF"
@@ -39,6 +40,10 @@ class DfPipeline:
             db_data["cities"] = load_data(spider.data['cities'], year)
 
             self.db[self.collection_name].insert_one(db_data)
+
+            delete_folder(f'data/{str(year)}')
+
+        delete_folder('data')
 
         self.client.close()
 

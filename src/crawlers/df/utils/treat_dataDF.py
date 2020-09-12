@@ -1,4 +1,5 @@
 import pandas as pd
+from utils.handle_folders import delete_file 
 
 crimes_nature = ('LATROCÍNIO', 'ROUBO A TRANSEUNTE', 'ROUBO DE VEÍCULO', 'ROUBO EM RESIDÊNCIA', 'ESTUPRO', 'TRÁFICO DE DROGAS')
 
@@ -22,6 +23,8 @@ def get_datas_from_excel(name, year):
         df_excel = df_excel.rename(columns={'Unnamed: 2': 'Total'}, inplace=False)
 
         crimes = dict(zip([str(crime) for crime in df_excel.index], [str(value[0]) for value in df_excel.values]))
+
+        delete_file(f'data/{str(year)}', f'{name}.xlsx')
 
         # Filter dictionary by keeping elements whose keys are in crime_nature list 
         filtered_crimes = dict(filter(lambda elem : elem[0] in crimes_nature, crimes.items()))

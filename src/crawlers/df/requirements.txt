@@ -1,3 +1,4 @@
 scrapy==2.3.0
 pandas
 xlrd
+pymongo

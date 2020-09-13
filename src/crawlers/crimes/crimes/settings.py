@@ -1,4 +1,4 @@
-# Scrapy settings for df project
+# Scrapy settings for crimes project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,17 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'df'
+BOT_NAME = 'crimes'
 
-SPIDER_MODULES = ['df.spiders']
-NEWSPIDER_MODULE = 'df.spiders'
+SPIDER_MODULES = ['crimes.spiders']
+NEWSPIDER_MODULE = 'crimes.spiders'
+
+MONGO_URI = "mongodb://localhost:27017"
+MONGO_DATABASE = "stay-safe"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'df (+http://www.yourdomain.com)'
+#USER_AGENT = 'crimes (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,13 +48,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'df.middlewares.DfSpiderMiddleware': 543,
+#    'crimes.middlewares.CrimesSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'df.middlewares.DfDownloaderMiddleware': 543,
+#    'crimes.middlewares.CrimesDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -62,9 +65,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'df.pipelines.DfPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'crimes.pipelines.CrimesPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

@@ -2,20 +2,18 @@
 
 Secretary service of Stay Safe project
 
-## Run
+## Run Flask API
 If you haven't build yet:
 <pre><code>$ docker-compose up --build</code></pre>
 
 After that you just need to run:
 <pre><code>$ docker-compose up</code></pre>
 
-## Crawlers
-Enter the directory of the crawler uf wanted.
-If you haven't build yet:
-<pre><code>$ docker build -t crawler_uf .</code></pre>
+To have access to pdb when running, use the following command:
+<pre><code>$ docker-compose run --service-ports web python -u main.py</code></pre>
 
-After that run:
-<pre><code>$ docker run crawler_uf scrapy crawl spider_name</code></pre>
+## Run Crawlers
+<pre><code>$ docker-compose run crawler_crimes scrapy crawl spider_name</code></pre>
 
 ## Crontab
 Crontab is a time-based job scheduler in Unix-like operating systems, it doesn't need to install if you're using a Unix based SO.

@@ -1,3 +1,4 @@
+import os
 # Scrapy settings for crimes project
 #
 # For simplicity, this file contains only settings considered important or
@@ -12,7 +13,7 @@ BOT_NAME = 'crimes'
 SPIDER_MODULES = ['crimes.spiders']
 NEWSPIDER_MODULE = 'crimes.spiders'
 
-MONGO_URI = "mongodb://localhost:27017"
+MONGO_URI = os.environ['DB_PORT_27017_TCP_ADDR']
 MONGO_DATABASE = "stay-safe"
 
 

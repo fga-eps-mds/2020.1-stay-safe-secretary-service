@@ -20,6 +20,15 @@ class CrimesSP(scrapy.Spider):
 
         self.driver.find_element_by_xpath('//*[@id="conteudo_btnMensal"]').click()
 
+        crimes_nature = {
+            'LATROCÍNIO': "Latrocinio",
+            'TOTAL DE ESTUPRO (4)': 'Estupro',
+            'ROUBO - OUTROS': 'Roubos',
+            'ROUBO DE VEÍCULO': 'Roubo de Veiculo',
+            'FURTO - OUTROS': 'Furtos',
+            'FURTO DE VEÍCULO': 'Furto de Veiculo',
+        }
+
         data = {}
         for i in range (1, len(cities_list)-1):
             select_regions = Select(WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="conteudo_ddlRegioes"]'))))
@@ -43,10 +52,12 @@ class CrimesSP(scrapy.Spider):
                 for k, crime in enumerate(table_crimes_year):
                     if k > 0:
                         crimes_data = {}
-                        crimes_data['crime_nature'] = crime.xpath('./td[1]/text()').get()
-                        crimes_data['quantity'] = int(crime.xpath(f'./td[14]/text()').get().replace('.', ''))
+                        crime_nature = crime.xpath('./td[1]/text()').get()
+                        if crime_nature in crimes_nature.keys():
+                            crimes_data['crime_nature'] = crimes_nature[crime_nature]
+                            crimes_data['quantity'] = int(crime.xpath(f'./td[14]/text()').get().replace('.', ''))
 
-                        annual_crimes_registers.append(crimes_data)
+                            annual_crimes_registers.append(crimes_data)
 
                 city_year_data['year'] = int(selector.xpath(f'//*[@id="conteudo_repAnos_lbAno_{str(j)}"]/text()').get())
                 city_year_data['crimes_data'] = annual_crimes_registers

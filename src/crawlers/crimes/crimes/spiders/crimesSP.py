@@ -5,10 +5,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from scrapy.selector import Selector
 
+from ..items import SpItem
+
 class CrimesSP(scrapy.Spider):
     name = "crimes_sp"
     allowed_domains = ['https://www.ssp.sp.gov.br/']
     start_urls = ['https://www.ssp.sp.gov.br/estatistica/pesquisa.aspx']
+
+    data = {}
 
     def __init__(self):
         self.driver = webdriver.Firefox()
@@ -29,7 +33,9 @@ class CrimesSP(scrapy.Spider):
             'FURTO DE VEÍCULO': 'Furto de Veiculo',
         }
 
-        data = {}
+        years = []
+        cities = []
+
         for i in range (1, len(cities_list)-1):
             select_regions = Select(WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="conteudo_ddlRegioes"]'))))
             select_regions.select_by_value('0')
@@ -41,11 +47,10 @@ class CrimesSP(scrapy.Spider):
             selector = Selector(text=source)
 
             city_name = selector.xpath('//*[@id="conteudo_lkMunicipio"]/text()').get().replace(' | ', '')
+            cities.append(city_name)
 
-            city_data = []
+            cities_data = {}
             for j in range(0, 3):
-                city_year_data = {}
-
                 table_crimes_year = selector.xpath(f'//*[@id="conteudo_repAnos_gridDados_{str(j)}"]/tbody//tr')
 
                 annual_crimes_registers = []
@@ -59,11 +64,19 @@ class CrimesSP(scrapy.Spider):
 
                             annual_crimes_registers.append(crimes_data)
 
-                city_year_data['year'] = int(selector.xpath(f'//*[@id="conteudo_repAnos_lbAno_{str(j)}"]/text()').get())
-                city_year_data['crimes_data'] = annual_crimes_registers
+                year = int(selector.xpath(f'//*[@id="conteudo_repAnos_lbAno_{str(j)}"]/text()').get())
 
-                city_data.append(city_year_data)
+                if year not in years:
+                    years.append(year)
 
-            data[city_name] = city_data
-        
+                cities_data[year] = annual_crimes_registers
+
+            self.data[city_name] = cities_data
+
+        crawlerItem = SpItem()
+        crawlerItem['years'] = years
+        crawlerItem['cities'] = cities
+
         self.driver.close()
+
+        yield crawlerItem

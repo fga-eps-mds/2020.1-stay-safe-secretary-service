@@ -10,3 +10,9 @@ class DfItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass
+
+class SpItem(scrapy.Item):
+    years = scrapy.Field()
+    cities = scrapy.Field()
+    
+    pass

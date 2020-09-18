@@ -4,6 +4,7 @@ Import scrapy, pymongo and utils functions to load data.
 import datetime
 import pymongo
 from utils.treat_data_df import load_data
+from utils.treat_data_sp import get_cities_data_by_year
 from utils.handle_folders import delete_folder
 
 class CrimesPipeline:
@@ -37,6 +38,23 @@ class CrimesPipeline:
         self.collection_name = spider.name
         self.client = pymongo.MongoClient(self.mongo_uri)
         self.database = self.client[self.mongo_db]
+
+    def process_item(self, item, spider):
+        for year in item['years']:
+            db_data = {}
+
+            date = datetime.datetime.now()
+            db_data['capture_data'] = f'{date.strftime("%d")}/{date.strftime("%m")}/{date.strftime("%Y")}'
+            
+            db_data['period'] = {
+                'year': year
+            }
+
+            db_data['cities'] = get_cities_data_by_year(year=year, cities=item['cities'], cities_data=spider.data)
+            
+            self.db[self.collection_name].insert_one(db_data)
+
+        return item
 
     def close_spider(self, spider):
         """

@@ -12,6 +12,12 @@ class CrimesSP(scrapy.Spider):
     allowed_domains = ['https://www.ssp.sp.gov.br/']
     start_urls = ['https://www.ssp.sp.gov.br/estatistica/pesquisa.aspx']
 
+    custom_settings = {
+        'ITEM_PIPELINES': {
+            'crimes.pipelines.SpPipeline': 300,
+        }
+    }
+
     data = {}
 
     def __init__(self):

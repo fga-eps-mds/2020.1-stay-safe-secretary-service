@@ -100,19 +100,20 @@ class SpPipeline:
         """
         Treating the data per year and save on database.
         """
-        for year in item['years']:
+        for year, month in item['years'].items():
             db_data = {}
 
             date = datetime.datetime.now()
             db_data['capture_data'] = f'{date.strftime("%d")}/{date.strftime("%m")}/{date.strftime("%Y")}'
             
             db_data['period'] = {
-                'year': year
+                'start': f'01/{year}',
+                'end': '{0:0=2d}'.format(month) + f'/{year}'
             }
 
             db_data['cities'] = get_cities_data_by_year(year=year, cities=item['cities'], cities_data=spider.data)
             
-            self.db[self.collection_name].insert_one(db_data)
+            self.database[self.collection_name].insert_one(db_data)
 
         return item
 

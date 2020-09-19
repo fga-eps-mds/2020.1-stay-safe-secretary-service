@@ -39,7 +39,7 @@ class CrimesSP(scrapy.Spider):
             'FURTO DE VEÍCULO': 'Furto de Veiculo',
         }
 
-        years = []
+        years = {}
         cities = []
 
         for i in range (1, len(cities_list)-1):
@@ -59,6 +59,20 @@ class CrimesSP(scrapy.Spider):
             for j in range(0, 3):
                 table_crimes_year = selector.xpath(f'//*[@id="conteudo_repAnos_gridDados_{str(j)}"]/tbody//tr')
 
+                year = selector.xpath(f'//*[@id="conteudo_repAnos_lbAno_{str(j)}"]/text()').get()
+
+                # Get the last month with data in a year
+                if year not in years.keys():
+                    months_data = selector.xpath(f'//*[@id="conteudo_repAnos_gridDados_{j}"]/tbody/tr[2]//td')
+
+                    for month in range(1, 13):
+                        month_quantity = months_data[month].xpath('./text()').get()
+                        if month_quantity == '...':
+                            month = month - 1
+                            break
+                    
+                    years[year] = month
+
                 annual_crimes_registers = []
                 for k, crime in enumerate(table_crimes_year):
                     if k > 0:
@@ -69,11 +83,6 @@ class CrimesSP(scrapy.Spider):
                             crimes_data['quantity'] = int(crime.xpath(f'./td[14]/text()').get().replace('.', ''))
 
                             annual_crimes_registers.append(crimes_data)
-
-                year = int(selector.xpath(f'//*[@id="conteudo_repAnos_lbAno_{str(j)}"]/text()').get())
-
-                if year not in years:
-                    years.append(year)
 
                 cities_data[year] = annual_crimes_registers
 

@@ -36,7 +36,7 @@ class CrimesPipeline:
         Create the client and get the database at MongoDB.
         """
         self.collection_name = spider.name
-        self.client = pymongo.MongoClient(self.mongo_uri)
+        self.client = pymongo.MongoClient(self.mongo_uri, 27017)
         self.database = self.client[self.mongo_db]
 
     def process_item(self, item, spider):

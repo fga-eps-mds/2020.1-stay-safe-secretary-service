@@ -1,13 +1,19 @@
+"""
+Import scrapy, selenium functions and SpItem.
+"""
 import scrapy
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from scrapy.selector import Selector
-
 from ..items import SpItem
 
+
 class CrimesSP(scrapy.Spider):
+    """
+    Spider of SSP-SP.
+    """
     name = "crimes_sp"
     allowed_domains = ['https://www.ssp.sp.gov.br/']
     start_urls = ['https://www.ssp.sp.gov.br/estatistica/pesquisa.aspx']
@@ -24,6 +30,9 @@ class CrimesSP(scrapy.Spider):
         self.driver = webdriver.Firefox()
 
     def parse(self, response):
+        """
+        Function to get all crimes statistics and save on data attribute.
+        """
         self.driver.get(response.url)
         
         cities_list = response.xpath('//*[@id="conteudo_ddlMunicipios"]//option')
@@ -56,6 +65,7 @@ class CrimesSP(scrapy.Spider):
             cities.append(city_name)
 
             cities_data = {}
+            # Iterate over the three years table of a city
             for j in range(0, 3):
                 table_crimes_year = selector.xpath(f'//*[@id="conteudo_repAnos_gridDados_{str(j)}"]/tbody//tr')
 
@@ -74,6 +84,7 @@ class CrimesSP(scrapy.Spider):
                     years[year] = month
 
                 annual_crimes_registers = []
+                # Iterate over all crimes and save the crimes that are in crimes_nature list
                 for k, crime in enumerate(table_crimes_year):
                     if k > 0:
                         crimes_data = {}

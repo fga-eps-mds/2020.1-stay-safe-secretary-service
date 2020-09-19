@@ -8,5 +8,15 @@ web:
   links:
     - db
   restart: on-failure
+  stdin_open: true
+  tty: true
 db:
   image: mongo:3.0.2
+crawler_crimes:
+  build: .
+  volumes:
+    - ./src/crawlers/crimes:/stay-safe
+  links:
+    - db
+  stdin_open: true
+  tty: true

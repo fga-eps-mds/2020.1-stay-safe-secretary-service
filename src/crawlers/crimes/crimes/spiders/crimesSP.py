@@ -3,6 +3,7 @@ Import scrapy, selenium functions and SpItem.
 """
 import scrapy
 from selenium import webdriver
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait, Select
@@ -27,7 +28,7 @@ class CrimesSP(scrapy.Spider):
     data = {}
 
     def __init__(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Remote('http://selenium:4444/wd/hub', DesiredCapabilities.FIREFOX)
 
     def parse(self, response):
         """

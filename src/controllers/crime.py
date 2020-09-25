@@ -6,15 +6,25 @@ import os
 
 
 def get_all_crimes(secretary, crime):
-    filters = {}
-    if (crime):
-        filters['crime_nature'] = crime
+    data_df = []
+    data_sp = []
     if (secretary == "df" or secretary == None):
         _data = db['crimes_df'].find()
-        data = [data for data in _data]
-        for i in data:
-            i.pop('_id', None)
-            # for j in i['cities']:
-            #     filter(lambda x: x['crime_nature'] == "Roubo a Transeunte", j)
+        data_df = [data for data in _data]
+    if (secretary == "sp" or secretary == None):
+        _data = db['crimes_sp'].find()
+        data_sp = [data for data in _data]
 
-    return data, 200
+    for year in range(len(data_df)):
+        data_df[year].pop('_id', None)
+        for city in range(len(data_df[year]['cities'])):
+            city_name = list(data_df[year]['cities'][city].keys())[0]
+            data_df[year]['cities'][city][city_name] = list(filter(lambda x: (x['crime_nature'] == crime) if crime else True, data_df[year]['cities'][city][city_name]))
+    
+    for year in range(len(data_sp)):
+        data_sp[year].pop('_id', None)
+        for city in range(len(data_sp[year]['cities'])):
+            city_name = list(data_sp[year]['cities'][city].keys())[0]
+            data_sp[year]['cities'][city][city_name] = list(filter(lambda x: (x['crime_nature'] == crime) if crime else True, data_sp[year]['cities'][city][city_name]))
+    
+    return { 'df': data_df, 'sp': data_sp }, 200

@@ -4,7 +4,7 @@ Secretary service of Stay Safe project
 
 ## Run Flask API
 If you haven't build yet:
-<pre><code>$ docker-compose up web db --build</code></pre>
+<pre><code>$ docker-compose build web db </code></pre>
 
 After that you just need to run:
 <pre><code>$ docker-compose up web db</code></pre>

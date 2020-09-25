@@ -1,5 +1,6 @@
 from flask import jsonify
 
+
 def create_response(content, status=500):
     """
        The jsonify() function in flask returns a flask.Response()

@@ -1,6 +1,5 @@
 import os
 from pymongo import MongoClient
-from settings import logger
 
 
 client = MongoClient(

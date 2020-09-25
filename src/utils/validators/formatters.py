@@ -18,16 +18,3 @@ def create_response(content, status=500):
         content = {'error': 'Internal server error!'}
 
     return jsonify(content), status
-
-
-def get_row_dict(row):
-    """
-        Converts the model object into a dictionary
-    """
-
-    d = {}
-    for column in row.__table__.columns:
-        attr = getattr(row, column.name)
-        d[column.name] = attr
-
-    return d

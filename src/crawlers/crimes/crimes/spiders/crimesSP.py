@@ -5,6 +5,7 @@ import scrapy
 import time
 from selenium.webdriver.firefox.options import Options
 from selenium import webdriver
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait, Select
@@ -31,7 +32,7 @@ class CrimesSP(scrapy.Spider):
     def __init__(self):
         options = Options()
         options.headless = True
-        self.driver = webdriver.Firefox(options=options)
+        self.driver = webdriver.Remote('http://selenium:4444/wd/hub', options=options)
 
     def parse(self, response):
         """

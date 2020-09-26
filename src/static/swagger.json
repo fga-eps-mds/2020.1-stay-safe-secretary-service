@@ -1,0 +1,13 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Stay Safe app secretary service",
+    "version": "1.0.0",
+    "title": "Secretary Service - Stay Safe",
+    "license": {
+      "name": "GPL",
+      "url": "https://github.com/fga-eps-mds/2020.1-stay-safe-secretary-service/blob/develop/LICENSE"
+    }
+  },
+  "host": "localhost:5000"
+}

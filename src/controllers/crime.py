@@ -2,31 +2,31 @@ from database.db import db
 
 
 def get_all_crimes(secretary, crime):
-    data_df = []
-    data_sp = []
+    # validate the params
+    if (secretary and secretary not in ['sp', 'df']):
+        return "Parâmetro secretary inválido", 400
+
+    valid_crimes = ['Latrocínio', 'Roubo a Transeunte', 'Roubo de Veículo',
+                    'Roubo de Residência', 'Estupro']
+    if (crime and crime not in valid_crimes):
+        return "Parâmetro crime inválido", 400
+
+    # getting the data
+    data = []
     if (secretary == "df" or secretary is None):
-        _data = db['crimes_df'].find()
-        data_df = [data for data in _data]
+        _data = db['crimes_df'].find({}, {'_id': False})
+        data += [data for data in _data]
     if (secretary == "sp" or secretary is None):
-        _data = db['crimes_sp'].find()
-        data_sp = [data for data in _data]
+        _data = db['crimes_sp'].find({}, {'_id': False})
+        data += [data for data in _data]
 
-    for year in range(len(data_df)):
-        data_df[year].pop('_id', None)
-        for city in range(len(data_df[year]['cities'])):
-            city_name = list(data_df[year]['cities'][city].keys())[0]
-            data_df[year]['cities'][city][city_name] = \
+    # filtering the data
+    for year in range(len(data)):
+        for city in range(len(data[year]['cities'])):
+            city_name = list(data[year]['cities'][city].keys())[0]
+            data[year]['cities'][city][city_name] = \
                 list(filter(lambda x:
                             (x['crime_nature'] == crime) if crime else True,
-                            data_df[year]['cities'][city][city_name]))
+                            data[year]['cities'][city][city_name]))
 
-    for year in range(len(data_sp)):
-        data_sp[year].pop('_id', None)
-        for city in range(len(data_sp[year]['cities'])):
-            city_name = list(data_sp[year]['cities'][city].keys())[0]
-            data_sp[year]['cities'][city][city_name] = \
-                list(filter(lambda x:
-                            (x['crime_nature'] == crime) if crime else True,
-                            data_sp[year]['cities'][city][city_name]))
-
-    return {'df': data_df, 'sp': data_sp}, 200
+    return data, 200

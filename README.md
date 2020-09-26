@@ -10,7 +10,13 @@ After that you just need to run:
 <pre><code>$ docker-compose up web db</code></pre>
 
 To have access to pdb when running, use the following command:
-<pre><code>$ docker-compose run --service-ports web python -u main.py</code></pre>
+<pre><code>$ docker-compose run --service-ports api python -u main.py</code></pre>
+
+## Run pylint
+### Pylint
+```bash
+$ docker-compose run api sh -c "pylint **/*.py"
+```
 
 ## Run Crawlers
 <pre><code>$ docker-compose run crawler_crimes scrapy crawl spider_name</code></pre>

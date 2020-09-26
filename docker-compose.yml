@@ -1,4 +1,4 @@
-web:
+api:
   build: .
   command: python -u main.py
   ports:

@@ -1,5 +1,7 @@
-web:
+api:
   build: .
+  environment:
+    - PYTHONPATH=.
   command: python -u main.py
   ports:
     - "5000:5000"
@@ -20,5 +22,10 @@ crawler_crimes:
     - ./src/crawlers/crimes:/stay-safe
   links:
     - db
+    - selenium
   stdin_open: true
   tty: true
+selenium:
+  image: selenium/standalone-firefox
+  ports:
+    - "4444:4444"

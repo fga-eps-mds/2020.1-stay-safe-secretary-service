@@ -2,7 +2,7 @@ from flask import Flask
 from flask_cors import CORS
 from flask_swagger_ui import get_swaggerui_blueprint
 
-from views.index import index_blueprint
+from views.crime import crime_blueprint
 
 swagger_blueprint = get_swaggerui_blueprint(
     '/api/docs',
@@ -14,7 +14,7 @@ swagger_blueprint = get_swaggerui_blueprint(
 
 
 app = Flask(__name__)
-app.register_blueprint(index_blueprint)
+app.register_blueprint(crime_blueprint)
 app.register_blueprint(swagger_blueprint, url_prefix='/api/docs')
 
 CORS(app, automatic_options=True)

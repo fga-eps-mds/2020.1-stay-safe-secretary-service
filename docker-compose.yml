@@ -12,6 +12,8 @@ api:
   restart: on-failure
   stdin_open: true
   tty: true
+  environment:
+    - PYTHONPATH=.
 db:
   image: mongo:3.0.2
 crawler_crimes:

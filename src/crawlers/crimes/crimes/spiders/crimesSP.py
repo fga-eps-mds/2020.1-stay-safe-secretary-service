@@ -2,6 +2,8 @@
 Import scrapy, selenium functions and SpItem.
 """
 import scrapy
+import time
+from selenium.webdriver.firefox.options import Options
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.by import By
@@ -28,17 +30,22 @@ class CrimesSP(scrapy.Spider):
     data = {}
 
     def __init__(self):
-        self.driver = webdriver.Remote('http://selenium:4444/wd/hub', DesiredCapabilities.FIREFOX)
+        options = Options()
+        options.headless = True
+        self.driver = webdriver.Remote('http://selenium:4444/wd/hub', options=options)
 
     def parse(self, response):
         """
         Function to get all crimes statistics and save on data attribute.
         """
         self.driver.get(response.url)
+        time.sleep(2)
         
         cities_list = response.xpath('//*[@id="conteudo_ddlMunicipios"]//option')
+        time.sleep(2)
 
         self.driver.find_element_by_xpath('//*[@id="conteudo_btnMensal"]').click()
+        time.sleep(2)
 
         crimes_nature = {
             'LATROCÍNIO': "Latrocinio",
@@ -55,15 +62,19 @@ class CrimesSP(scrapy.Spider):
         for i in range (1, len(cities_list)-1):
             select_regions = Select(WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="conteudo_ddlRegioes"]'))))
             select_regions.select_by_value('0')
+            time.sleep(2)
             
             select_cities = Select(WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="conteudo_ddlMunicipios"]'))))
             select_cities.select_by_value(str(i))
-            
+            time.sleep(2)
+
             source = self.driver.page_source
             selector = Selector(text=source)
+            time.sleep(1)
 
             city_name = selector.xpath('//*[@id="conteudo_lkMunicipio"]/text()').get().replace(' | ', '')
             cities.append(city_name)
+            time.sleep(1)
 
             cities_data = {}
             # Iterate over the three years table of a city

@@ -1,0 +1,23 @@
+name: CI
+
+on: [push]
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        
+      - name: Run build
+        run: |
+          docker-compose --file docker-compose.yml build
+          
+      - name: Analysing the code with pylint
+        run: |
+          docker-compose run api sh -c "pylint --fail-under=8 **/*.py"
+          
+      - name: Run tests
+        run: |
+          docker-compose --file docker-compose.yml run api pytest
+  

@@ -13,9 +13,13 @@ To have access to pdb when running, use the following command:
 <pre><code>$ docker-compose run --service-ports api python -u main.py</code></pre>
 
 ## Run pylint
-### Pylint
 ```bash
 $ docker-compose run api sh -c "pylint **/*.py"
+```
+
+## Run tests
+```bash
+$ docker-compose run api pytest
 ```
 
 ## Run Crawlers

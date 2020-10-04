@@ -2,6 +2,7 @@ import unittest
 
 from controllers import crime as controller
 from database.db import db
+from random import randint
 
 
 class TestCrime(unittest.TestCase):
@@ -53,5 +54,13 @@ class TestCrime(unittest.TestCase):
         """
         result, status = controller.get_all_crimes(None, "Roubo a Transeunte")
         self.assertEqual(status, 200)
-        # self.assertEqual(result[0]['cities'][9]['Gama'][0]['crime_nature'],
-        #                 "Roubo a Transeunte")
+        if self.db_df_len == 0 and self.db_sp_len == 0:
+            self.assertEqual(result, [])
+        else:
+            index = randint(0, 5)
+            cities = [
+                city for city in result[0]['cities'][index].keys()]
+            for city in cities:
+                self.assertEqual(
+                    result[0]['cities'][index][city][0]['crime_nature'],
+                    'Roubo a Transeunte')

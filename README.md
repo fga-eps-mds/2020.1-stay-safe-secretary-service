@@ -4,10 +4,10 @@ Secretary service of Stay Safe project
 
 ## Run Flask API
 If you haven't build yet:
-<pre><code>$ docker-compose build web db </code></pre>
+<pre><code>$ docker-compose build api db </code></pre>
 
 After that you just need to run:
-<pre><code>$ docker-compose up web db</code></pre>
+<pre><code>$ docker-compose up api db</code></pre>
 
 To have access to pdb when running, use the following command:
 <pre><code>$ docker-compose run --service-ports api python -u main.py</code></pre>

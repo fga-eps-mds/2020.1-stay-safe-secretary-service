@@ -6,8 +6,8 @@ def get_all_crimes(secretary, crime):
     if (secretary and secretary not in ['sp', 'df']):
         return "Parâmetro secretary inválido", 400
 
-    valid_crimes = ['Latrocinio', 'Roubo a Transeunte', 'Roubo de Veículo',
-                    'Roubo de Residência', 'Estupro']
+    valid_crimes = ['Latrocinio', 'Roubo a Transeunte', 'Roubo de Veiculo',
+                    'Roubo de Residencia', 'Estupro']
     if (crime and crime not in valid_crimes):
         return "Parâmetro crime inválido", 400
 

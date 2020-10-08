@@ -17,9 +17,15 @@ To have access to pdb when running, use the following command:
 $ docker-compose run api sh -c "pylint **/*.py"
 ```
 
-## Run tests
+### Pytest / Coverage
+#### To run tests 
 ```bash
-$ docker-compose run api pytest
+$ docker-compose run api coverage run -m pytest
+```
+
+#### To report results with Coverage
+```bash
+$ docker-compose run api coverage report -m
 ```
 
 ## Run Crawlers

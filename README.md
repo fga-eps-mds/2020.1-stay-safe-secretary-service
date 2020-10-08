@@ -9,7 +9,7 @@ If you haven't build yet:
 After that you just need to run:
 <pre><code>$ docker-compose up api db</code></pre>
 
-To have access to pdb when running, use the following command:
+To have access to pdb (debug library) when running, use the following command:
 <pre><code>$ docker-compose run --service-ports api python -u main.py</code></pre>
 
 ## Run pylint

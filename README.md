@@ -1,4 +1,4 @@
-# fga-eps-mds-2020.1-stay-safe-secretary-service
+# Secretary Service
 
 Secretary service of Stay Safe project
 

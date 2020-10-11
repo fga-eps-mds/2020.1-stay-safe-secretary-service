@@ -32,4 +32,5 @@ jobs:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         with:
           coverageCommand: docker-compose --file docker-compose.yml run api coverage json
+          coverageLocations: ${{github.workspace}}/coverage.json:coverage.py
   

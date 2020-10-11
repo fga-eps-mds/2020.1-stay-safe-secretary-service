@@ -1,4 +1,4 @@
-# fga-eps-mds-2020.1-stay-safe-secretary-service
+# Secretary Service
 
 Secretary service of Stay Safe project
 
@@ -9,7 +9,7 @@ If you haven't build yet:
 After that you just need to run:
 <pre><code>$ docker-compose up api db</code></pre>
 
-To have access to pdb when running, use the following command:
+To have access to pdb (debug library) when running, use the following command:
 <pre><code>$ docker-compose run --service-ports api python -u main.py</code></pre>
 
 ## Run pylint
@@ -17,9 +17,15 @@ To have access to pdb when running, use the following command:
 $ docker-compose run api sh -c "pylint **/*.py"
 ```
 
-## Run tests
+### Pytest / Coverage
+#### To run tests 
 ```bash
-$ docker-compose run api pytest
+$ docker-compose run api coverage run -m pytest
+```
+
+#### To report results with Coverage
+```bash
+$ docker-compose run api coverage report -m
 ```
 
 ## Run Crawlers

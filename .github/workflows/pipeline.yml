@@ -23,7 +23,7 @@ jobs:
            
       - name: Run tests coverage
         run: |
-          docker-compose --file docker-compose.yml run api coverage report -m
+          docker-compose --file docker-compose.yml run api coverage xml
       
       - name: Code Climate Test Reporter
         uses: aktions/codeclimate-test-reporter@v1

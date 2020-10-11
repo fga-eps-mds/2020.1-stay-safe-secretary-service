@@ -23,8 +23,8 @@ jobs:
           
       - name: ls
         run: |
-          docker-compose --file docker-compose.yml run api coverage json
-          ls/src
+          docker-compose --file docker-compose.yml run api coverage json -o ${{github.workspace}}/coverage.json
+          ls
       
       - name: Test coverage & publish code coverage
         uses: paambaati/codeclimate-action@v2.7.4

@@ -26,11 +26,12 @@ jobs:
           docker-compose --file docker-compose.yml run api coverage json -o ${{github.workspace}}/coverage.json
           ls
       
-      - name: Test coverage & publish code coverage
-        uses: paambaati/codeclimate-action@v2.7.4
-        env:
-          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
-        with:
-          coverageCommand: docker-compose --file docker-compose.yml run api coverage json
-          coverageLocations: ${{github.workspace}}/coverage.json:coverage.py
+      - name: Publish code coverage
+        run: |
+          docker-compose --file docker-compose.yml run api codeclimate-test-reporter --token ${{secrets.CC_TEST_REPORTER_ID}}
+        #env:
+        #  CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+        #with:
+        #  coverageCommand: docker-compose --file docker-compose.yml run api coverage json
+        #  coverageLocations: ${{github.workspace}}/coverage.json:coverage.py
   

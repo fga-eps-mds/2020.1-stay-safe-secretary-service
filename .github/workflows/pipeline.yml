@@ -20,14 +20,3 @@ jobs:
       - name: Run tests
         run: |
           docker-compose --file docker-compose.yml run api coverage run -m pytest
-      
-      - name: Publish code coverage
-        env:
-          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
-        run: |
-          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-          chmod +x ./cc-test-reporter
-          ./cc-test-reporter before-build
-          docker-compose --file docker-compose.yml run api coverage xml
-          ./cc-test-reporter after-build -t coverage.py --exit-code $?
-  

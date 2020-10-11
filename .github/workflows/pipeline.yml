@@ -24,9 +24,7 @@ jobs:
       - name: Test coverage & publish code coverage
         uses: paambaati/codeclimate-action@v2.7.4
         env:
-          # Set CC_TEST_REPORTER_ID as secret of your repo
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         with:
-          # The report file must be there, otherwise Code Climate won't find it
-          coverageCommand: docker-compose --file docker-compose.yml run api coverage xml
+          coverageCommand: docker-compose --file docker-compose.yml run api coverage json
   

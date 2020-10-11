@@ -34,5 +34,5 @@ jobs:
           chmod +x ./cc-test-reporter
           ./cc-test-reporter before-build
           docker-compose --file docker-compose.yml run api coverage report
-          ./cc-test-reporter after-build --exit-code
+          ./cc-test-reporter after-build -t coverage.py --exit-code $?
   

@@ -20,14 +20,14 @@ jobs:
       - name: Run tests
         run: |
           docker-compose --file docker-compose.yml run api coverage run -m pytest
-           
-      - name: Run tests coverage
-        run: |
-          docker-compose --file docker-compose.yml run api coverage xml
       
-      - name: Code Climate Test Reporter
-        uses: aktions/codeclimate-test-reporter@v1
+      - name: Test coverage & publish code coverage
+        uses: paambaati/codeclimate-action@v2.7.4
+        env:
+          # Set CC_TEST_REPORTER_ID as secret of your repo
+          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         with:
-          codeclimate-test-reporter-id: ${{ secrets.CC_TEST_REPORTER_ID }}
-          command: after-build
+          # The report file must be there, otherwise Code Climate won't find it
+          coverageCommand: docker-compose --file docker-compose.yml run api coverage xml
+          coverageLocations: ${{github.workspace}}/src/coverage.xml:coverage
   

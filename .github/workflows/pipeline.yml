@@ -24,7 +24,6 @@ jobs:
       - name: ls
         run: |
           docker-compose --file docker-compose.yml run api coverage json
-          ls
           ls/src
       
       - name: Test coverage & publish code coverage

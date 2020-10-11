@@ -29,5 +29,4 @@ jobs:
         with:
           # The report file must be there, otherwise Code Climate won't find it
           coverageCommand: docker-compose --file docker-compose.yml run api coverage xml
-          coverageLocations: ${{github.workspace}}/src/coverage.xml:coverage
   

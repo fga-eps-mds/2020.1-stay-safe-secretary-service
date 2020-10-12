@@ -7,8 +7,9 @@ import scrapy
 
 
 class DfItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
+    year = scrapy.Field()
+    city = scrapy.Field()
+    
     pass
 
 class SpItem(scrapy.Item):

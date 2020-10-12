@@ -2,78 +2,60 @@
 Functions to treat the DF data
 """
 import pandas as pd
-from utils.handle_folders import delete_file
 
-crimes_nature = {
-    'LATROCÍNIO': "Latrocinio",
-    'ROUBO A TRANSEUNTE': 'Roubo a Transeunte',
-    'ROUBO DE VEÍCULO': 'Roubo de Veiculo',
-    'ROUBO EM RESIDÊNCIA': 'Roubo de Residencia',
-    'ESTUPRO': 'Estupro',
-    'TRÁFICO DE DROGAS': 'Trafico de Entorpecentes',
-}
+from utils.handle_folders import delete_file
+from utils.crimes_nature import crimes_nature_df
 
 def treat_extracted_data(filtered_crimes):
     """
-    Create the object with crimes nature quantity.
+    Create the array of crimes according to the architecture document.
     """
-    city_data = []
-
+    crimes = []
     for key, value in filtered_crimes.items():
         type_crime = {}
-        type_crime['crime_nature'] = crimes_nature[key]
+        type_crime['nature'] = crimes_nature_df[key]
         type_crime['quantity'] = int(float(value))
 
-        city_data.append(type_crime)
+        crimes.append(type_crime)
 
-    return city_data
+    return crimes
 
 
-def get_datas_from_excel(name, year):
+def get_data_from_excel(city_name):
     """
-    Open the excel and treating the table according
-    to architecture document.
+    Open the annual excel of a city, get the monthly data,
+    treat them and return the annual data to the pipeline.
     """
     try:
-        df_excel = pd.read_excel(
-            f'./data/{str(year)}/{name}.xlsx',
-            usecols=range(1, 3),
+        excel_table = pd.read_excel(
+            f'./data/{city_name}.xlsx',
+            usecols=range(1, 15),
             index_col=0,
             skiprows=7,
             skipfooter=3
         )
-        df_excel = df_excel.rename(columns={'Unnamed: 2': 'Total'}, inplace=False)
 
-        crimes = dict(zip(
-            [str(crime) for crime in df_excel.index],
-            [str(value[0]) for value in df_excel.values]
-        ))
+        annual_city_data = []
+        for month in range(1, 13):
+            # Create a dictionary following the pattern: {'crime_nature': quantity}
+            crimes = dict(zip(
+                [str(crime) for crime in excel_table.index],
+                [str(value[month]) for value in excel_table.values]
+            ))
 
-        delete_file(f'data/{str(year)}', f'{name}.xlsx')
+            # Filter crimes by keeping elements whose keys are in crimes_nature_df list
+            filtered_crimes = dict(filter(
+                lambda elem : elem[0] in crimes_nature_df.keys(), crimes.items()
+            ))
 
-        # Filter dictionary by keeping elements whose keys are in crime_nature list
-        filtered_crimes = dict(filter(
-            lambda elem : elem[0] in crimes_nature.keys(), crimes.items()
-        ))
+            monthly_city_data = treat_extracted_data(filtered_crimes)
 
-        city_data = treat_extracted_data(filtered_crimes)
+            annual_city_data.append(monthly_city_data)
 
-        return city_data
+        # Delete the downloaded file
+        delete_file(f'data/', f'{city_name}.xlsx')
+        
+        return annual_city_data
 
     except FileNotFoundError:
         return []
-
-
-def load_data(names_of_cities, year):
-    """
-    Interating at DF cities list.
-    """
-    cities_data = []
-    for city_name in names_of_cities:
-        crimes_data = {}
-        city_data = get_datas_from_excel(city_name, year)
-        crimes_data[city_name] = city_data
-
-        cities_data.append(crimes_data)
-
-    return cities_data

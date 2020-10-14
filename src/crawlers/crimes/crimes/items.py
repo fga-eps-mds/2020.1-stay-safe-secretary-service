@@ -13,7 +13,8 @@ class DfItem(scrapy.Item):
     pass
 
 class SpItem(scrapy.Item):
-    years = scrapy.Field()
-    cities = scrapy.Field()
+    year = scrapy.Field()
+    city = scrapy.Field()
+    data = scrapy.Field()
     
     pass

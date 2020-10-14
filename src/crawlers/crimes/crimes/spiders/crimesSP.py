@@ -10,7 +10,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from scrapy.selector import Selector
+
 from ..items import SpItem
+from utils.crimes_nature import crimes_nature_sp
 
 
 class CrimesSP(scrapy.Spider):
@@ -27,8 +29,6 @@ class CrimesSP(scrapy.Spider):
         }
     }
 
-    data = {}
-
     def __init__(self):
         options = Options()
         options.headless = True
@@ -44,77 +44,72 @@ class CrimesSP(scrapy.Spider):
         cities_list = response.xpath('//*[@id="conteudo_ddlMunicipios"]//option')
         time.sleep(2)
 
+        # Click on "Ocorrências Registradas por Mês" button
         self.driver.find_element_by_xpath('//*[@id="conteudo_btnMensal"]').click()
         time.sleep(2)
 
-        crimes_nature = {
-            'LATROCÍNIO': "Latrocinio",
-            'TOTAL DE ESTUPRO (4)': 'Estupro',
-            'ROUBO - OUTROS': 'Roubos',
-            'ROUBO DE VEÍCULO': 'Roubo de Veiculo',
-            'FURTO - OUTROS': 'Furtos',
-            'FURTO DE VEÍCULO': 'Furto de Veiculo',
-        }
-
-        years = {}
-        cities = []
-
-        for i in range (1, len(cities_list)-1):
-            select_regions = Select(WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="conteudo_ddlRegioes"]'))))
+        for city in range (1, len(cities_list)-1):
+            # Select "Todos" on "Regiões" dropdown
+            select_regions = Select(WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((
+                    By.XPATH, '//*[@id="conteudo_ddlRegioes"]'))))
             select_regions.select_by_value('0')
             time.sleep(2)
             
-            select_cities = Select(WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="conteudo_ddlMunicipios"]'))))
-            select_cities.select_by_value(str(i))
+            # Select a city on "Munícipios" dropdown
+            select_cities = Select(WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((
+                    By.XPATH, '//*[@id="conteudo_ddlMunicipios"]'))))
+            select_cities.select_by_value(str(city))
             time.sleep(2)
 
             source = self.driver.page_source
             selector = Selector(text=source)
             time.sleep(1)
 
-            city_name = selector.xpath('//*[@id="conteudo_lkMunicipio"]/text()').get().replace(' | ', '')
-            cities.append(city_name)
+            city_name = selector.xpath(
+                '//*[@id="conteudo_lkMunicipio"]/text()').get().replace(' | ', '')
             time.sleep(1)
 
-            cities_data = {}
-            # Iterate over the three years table of a city
-            for j in range(0, 3):
-                table_crimes_year = selector.xpath(f'//*[@id="conteudo_repAnos_gridDados_{str(j)}"]/tbody//tr')
+            # Iterate over the three years of city data
+            for table in range(0, 3):
+                table_crimes_year = selector.xpath(
+                    f'//*[@id="conteudo_repAnos_gridDados_{str(table)}"]/tbody//tr')
 
-                year = selector.xpath(f'//*[@id="conteudo_repAnos_lbAno_{str(j)}"]/text()').get()
+                year = selector.xpath(
+                    f'//*[@id="conteudo_repAnos_lbAno_{str(table)}"]/text()').get()
 
-                # Get the last month with data in a year
-                if year not in years.keys():
-                    months_data = selector.xpath(f'//*[@id="conteudo_repAnos_gridDados_{j}"]/tbody/tr[2]//td')
+                annual_city_data = []
+                # Iterate over all crimes and save the crimes that are in crimes_nature_sp list
+                for i, crime in enumerate(table_crimes_year):
+                    if i > 0:
+                        crime_data = {}
 
-                    for month in range(1, 13):
-                        month_quantity = months_data[month].xpath('./text()').get()
-                        if month_quantity == '...':
-                            month = month - 1
-                            break
-                    
-                    years[year] = month
-
-                annual_crimes_registers = []
-                # Iterate over all crimes and save the crimes that are in crimes_nature list
-                for k, crime in enumerate(table_crimes_year):
-                    if k > 0:
-                        crimes_data = {}
+                        # Get a crime and check if it are in crimes_nature_sp list
                         crime_nature = crime.xpath('./td[1]/text()').get()
-                        if crime_nature in crimes_nature.keys():
-                            crimes_data['crime_nature'] = crimes_nature[crime_nature]
-                            crimes_data['quantity'] = int(crime.xpath(f'./td[14]/text()').get().replace('.', ''))
+                        if crime_nature in crimes_nature_sp.keys():
+                            crime_data['nature'] = crimes_nature_sp[crime_nature]
 
-                            annual_crimes_registers.append(crimes_data)
+                            monthly_quantity = []
+                            # Get the crime quantity of all months
+                            for month in range(2, 14):
+                                crime_quantity = crime.xpath(
+                                    f'./td[{month}]/text()').get()
 
-                cities_data[year] = annual_crimes_registers
+                                # Check if the monthly data doesn't exist yet
+                                if crime_quantity == '...':
+                                    break
+                                
+                                crime_quantity = int(crime_quantity.replace('.', ''))
+                                monthly_quantity.append(crime_quantity)
 
-            self.data[city_name] = cities_data
+                            crime_data['quantities'] = monthly_quantity
 
-        crawlerItem = SpItem()
-        crawlerItem['years'] = years
-        crawlerItem['cities'] = cities
+                            annual_city_data.append(crime_data)
+
+                # Create a new SpItem and process it for each annual table of a city
+                spiderItem = SpItem(
+                    year=year, city=city_name, data=annual_city_data)
+                yield spiderItem
 
         self.driver.close()
-
-        yield crawlerItem

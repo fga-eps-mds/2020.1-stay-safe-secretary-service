@@ -12,3 +12,12 @@ crimes_nature_df = {
     'FURTO A TRANSEUNTE': 'Furto a Transeunte',
     'ESTUPRO': 'Estupro',
 }
+
+crimes_nature_sp = {
+    'LATROCÍNIO': "Latrocínio",
+    'ROUBO - OUTROS': 'Outros Roubos',
+    'ROUBO DE VEÍCULO': 'Roubo de Veículo',
+    'FURTO - OUTROS': 'Outros Furtos',
+    'FURTO DE VEÍCULO': 'Furto de Veículo',
+    'TOTAL DE ESTUPRO (4)': 'Estupro',
+}

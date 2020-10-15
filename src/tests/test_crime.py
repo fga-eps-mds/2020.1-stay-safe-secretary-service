@@ -47,6 +47,15 @@ class TestCrime(unittest.TestCase):
             else:
                 self.assertEqual(new_db_secretary_len, self.db_sp_len)
 
+    def test_get_crimes_from_invalid_secretary(self):
+        """
+        Testing get crimes from one invalid secretary
+        """
+        result, status = controller.get_all_crimes("mt", None)
+
+        self.assertEqual(status, 400)
+        self.assertEqual(result, "Parâmetro secretary inválido")
+
     def test_get_crimes_by_crime_nature(self):
         """
         Testing get crimes by the crime nature
@@ -60,3 +69,12 @@ class TestCrime(unittest.TestCase):
                 self.assertEqual(
                     result[0]['cities'][city]['crimes'][0]['nature'],
                     'Roubo a Transeunte')
+
+    def test_get_crimes_by_invalid_crime_nature(self):
+        """
+        Testing get crimes by an invalid crime nature
+        """
+        result, status = controller.get_all_crimes(None, "Roubo a carga")
+
+        self.assertEqual(status, 400)
+        self.assertEqual(result, "Parâmetro crime inválido")

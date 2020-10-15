@@ -11,8 +11,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from scrapy.selector import Selector
 
-from ..items import SpItem
 from utils.crimes_nature import crimes_nature_sp
+from utils.treat_data_sp import get_city_data_by_month
+from ..items import CrimesItem
 
 
 class CrimesSP(scrapy.Spider):
@@ -22,12 +23,6 @@ class CrimesSP(scrapy.Spider):
     name = "crimes_sp"
     allowed_domains = ['https://www.ssp.sp.gov.br/']
     start_urls = ['https://www.ssp.sp.gov.br/estatistica/pesquisa.aspx']
-
-    custom_settings = {
-        'ITEM_PIPELINES': {
-            'crimes.pipelines.SpPipeline': 300,
-        }
-    }
 
     def __init__(self):
         options = Options()
@@ -106,10 +101,17 @@ class CrimesSP(scrapy.Spider):
                             crime_data['quantities'] = monthly_quantity
 
                             annual_city_data.append(crime_data)
+                
+                # Iterate over the annual_city_data and get the data by month
+                for month in range(len(annual_city_data[0]['quantities'])):
+                    monthly_data = get_city_data_by_month(annual_city_data, month)
 
-                # Create a new SpItem and process it for each annual table of a city
-                spiderItem = SpItem(
-                    year=year, city=city_name, data=annual_city_data)
-                yield spiderItem
+                    # Go to the method process_item on pipeline
+                    # to save a monthly data of a city on database.
+                    yield CrimesItem(
+                        city=city_name,
+                        period=f'{month+1}/{year}',
+                        monthly_data=monthly_data
+                    )
 
         self.driver.close()

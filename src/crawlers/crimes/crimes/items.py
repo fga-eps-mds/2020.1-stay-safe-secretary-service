@@ -5,16 +5,22 @@
 
 import scrapy
 
-
-class DfItem(scrapy.Item):
-    year = scrapy.Field()
+"""
+Crimes Item to be processed, the item must follow the pattern below:
+    CrimesItem(
+        city: 'Águas Claras', 
+        period: '1/2020',
+        monthly_data: [
+            { 'nature': 'Latrocínio', 'quantity': 5 },
+            { 'nature': 'Roubo a Transeunte', 'quantity': 7 },
+            { 'nature': 'Roubo de Veículo', 'quantity': 10 },
+            ...
+        ]
+    )
+"""
+class CrimesItem(scrapy.Item):
     city = scrapy.Field()
-    
-    pass
+    period = scrapy.Field()
+    monthly_data = scrapy.Field()
 
-class SpItem(scrapy.Item):
-    year = scrapy.Field()
-    city = scrapy.Field()
-    data = scrapy.Field()
-    
     pass

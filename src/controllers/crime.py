@@ -12,6 +12,10 @@ def get_all_crimes(secretary, crime):
     elif secretary == 'sp':
         valid_crimes = ['Latrocínio', 'Roubo de Veículo', 'Estupro', 
                 'Furto de Veículo', 'Outros Roubos', 'Outros Furtos']
+    else:
+        valid_crimes = ['Latrocínio', 'Roubo a Transeunte', 'Roubo de Veículo', 
+                'Roubo de Residência', 'Estupro', 'Furto de Veículo', 
+                'Furto a Transeunte', 'Outros Roubos', 'Outros Furtos']
     
     if (crime and crime not in valid_crimes):
         return "Parâmetro crime inválido", 400

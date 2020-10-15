@@ -5,7 +5,10 @@ import urllib.request
 import scrapy
 
 from utils.handle_folders import create_folder
-from ..items import DfItem
+from utils.handle_folders import delete_folder
+from utils.treat_data_df import get_data_from_excel
+from ..items import CrimesItem
+
 
 class CrimesDF(scrapy.Spider):
     """
@@ -15,21 +18,15 @@ class CrimesDF(scrapy.Spider):
     allowed_domains = "http://www.ssp.df.gov.br/"
     start_urls = ["http://www.ssp.df.gov.br/dados-por-regiao-administrativa/"]
 
-    custom_settings = {
-        'ITEM_PIPELINES': {
-            'crimes.pipelines.DfPipeline': 300,
-        }
-    }
-
     def parse(self, response):
         """
         Function to get all the excel files and save.
         """
-        data_table = response.xpath('//*[@id="conteudo"]/table[2]/tbody//tr')
+        cities_table = response.xpath('//*[@id="conteudo"]/table[2]/tbody//tr')
 
         create_folder('data')
 
-        for i, city in enumerate(data_table):
+        for i, city in enumerate(cities_table):
             if i > 1:
                 city_name = city.xpath(
                     './td[1]/strong/text()').get().replace('/', " ")
@@ -41,7 +38,6 @@ class CrimesDF(scrapy.Spider):
                 year = 2018
 
                 # Download the annual excel table of a city
-                # and process the item to save on database.
                 for excel_table in range(16, len(columns_table) + 1, 2):
                     data_url = city.xpath(f'./td[{excel_table}]/a/@href').get()
 
@@ -51,8 +47,17 @@ class CrimesDF(scrapy.Spider):
                             str(data_url),
                             f'./data/{city_name}.xlsx')
 
-                        # Create a new DfItem and process it for each annual table of a city
-                        spiderItem = DfItem(year=year, city=city_name)
-                        yield spiderItem
+                        annual_city_data = get_data_from_excel(city_name)
+                        # Iterate over the annual_city_data and get the data by month
+                        for month, monthly_data in enumerate(annual_city_data):
+                            # Go to the method process_item on pipeline
+                            # to save a monthly data of a city on database.
+                            yield CrimesItem(
+                                city=city_name,
+                                period=f'{month+1}/{year}',
+                                monthly_data=monthly_data
+                            )
 
                     year += 1
+
+        delete_folder('data')

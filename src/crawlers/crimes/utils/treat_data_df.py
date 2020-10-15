@@ -23,8 +23,8 @@ def treat_extracted_data(filtered_crimes):
 
 def get_data_from_excel(city_name):
     """
-    Open the annual excel of a city, get the monthly data,
-    treat them and return the annual data to the pipeline.
+    Open the annual excel table of a city, get the monthly data,
+    treat them and return the annual data to the spider.
     """
     try:
         excel_table = pd.read_excel(

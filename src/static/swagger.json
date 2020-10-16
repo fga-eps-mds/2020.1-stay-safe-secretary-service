@@ -9,5 +9,124 @@
       "url": "https://github.com/fga-eps-mds/2020.1-stay-safe-secretary-service/blob/develop/LICENSE"
     }
   },
-  "host": "localhost:5000"
+  "host": "localhost:5000",
+  "tags": [
+    {
+      "name": "crimes",
+      "description": "Operations about crimes"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api/": {
+      "get": {
+        "tags": [
+          "crimes"
+        ],
+        "summary": "Get all crimes",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "secretary",
+            "type": "string",
+            "enum": [
+              "df",
+              "sp"
+            ],
+            "description": "The secretary that will be filtered.",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "crime",
+            "type": "string",
+            "enum": [
+              "Latrocínio",
+              "Roubo a Transeunte",
+              "Roubo de Veículo,",
+              "Roubo de Residência",
+              "Estupro",
+              "Furto de Veículo",
+              "Furto a Transeunte",
+              "Outros Roubos",
+              "Outros Furtos"
+            ],
+            "description": "The crime that will be filtered.",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "capture_data": {
+                  "type": "string",
+                  "description": "The date that the data was captured -> 16/10/2020.",
+                  "example": "16/10/2020"
+                },
+                "period": {
+                  "type": "string",
+                  "description": "The month and year of the data.",
+                  "example": "10/2020"
+                },
+                "cities": {
+                  "type": "array",
+                  "description": "List of cities data.",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "The name of the city.",
+                        "example": "Águas Claras"
+                      },
+                      "crimes": {
+                        "type": "array",
+                        "description": "List of crimes and quantities.",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "nature": {
+                              "type": "string",
+                              "description": "The crime nature.",
+                              "example": "Latrocínio"
+                            },
+                            "quantity": {
+                              "type": "integer",
+                              "description": "The crime quantity.",
+                              "example": 10
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "description": "Invalid crime parameter or Invalid secretary parameter.",
+                  "example": "Parâmetro crime inválido"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

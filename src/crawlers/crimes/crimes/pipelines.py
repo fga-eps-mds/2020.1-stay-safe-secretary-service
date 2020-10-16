@@ -4,9 +4,6 @@ Import scrapy, pymongo and utils functions to treat data.
 import datetime
 import pymongo
 
-from utils.treat_data_df import get_data_from_excel
-from utils.treat_data_sp import get_city_data_by_month
-from utils.handle_folders import delete_folder
 from utils.dates import get_capture_data
 
 class CrimesPipeline:

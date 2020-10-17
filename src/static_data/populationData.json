@@ -3,7 +3,7 @@
     "census": 2020,
     "populations" : [    
         {
-            "state": "Federal District",
+            "state": "Distrito Federal",
             "cities": [
                 {
                     "name": "Ceilandia",

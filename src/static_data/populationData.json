@@ -1,9 +1,9 @@
-{
-    "populationData" : [    
+{   
+    "capture_data": "14/10/2020",
+    "census": 2020,
+    "populations" : [    
         {
             "state": "Federal District",
-            "capture_data": "14/10/2020",
-            "census": 2020,
             "cities": [
                 {
                     "name": "Ceilandia",
@@ -133,8 +133,6 @@
         },
         {
             "state": "Sao Paulo",
-            "capture_data": "14/10/2020",
-            "census": 2020,
             "cities": [
                 {
                     "name": "Adamantina",

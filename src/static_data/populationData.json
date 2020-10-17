@@ -1,0 +1,2720 @@
+{   
+    "capture_data": "14/10/2020",
+    "census": 2020,
+    "populations" : [    
+        {
+            "state": "Distrito Federal",
+            "cities": [
+                {
+                    "name": "Ceilandia",
+                    "population": 443.824
+                },
+                {
+                    "name": "Samambaia",
+                    "population": 244.960
+                },
+                {
+                    "name": "Plano Piloto",
+                    "population": 230.310
+                },
+                {
+                    "name": "Taguatinga",
+                    "population": 208.177
+                },
+                {
+                    "name": "Planaltina",
+                    "population": 196.086
+                },
+                {
+                    "name": "Águas Claras",
+                    "population": 170.636
+                },
+                {
+                    "name": "Gama",
+                    "population": 143.688
+                },
+                {
+                    "name": "Guará",
+                    "population": 140.560
+                },
+                {
+                    "name": "Recanto das Emas",
+                    "population": 132.447
+                },
+                {
+                    "name": "Santa Maria",
+                    "population": 129.271
+                },
+                {
+                    "name": "São Sebastião",
+                    "population": 115.988
+                },
+                {
+                    "name": "Riacho Fundo II",
+                    "population": 93.616
+                },
+                {
+                    "name": "Sobradinho II",
+                    "population": 78.283
+                },
+                {
+                    "name": "Paranoa",
+                    "population": 74.690
+                },
+                {
+                    "name": "Vicente Pires",
+                    "population": 73.452
+                },
+                {
+                    "name": "Sobradinho",
+                    "population": 71.165
+                },
+                {
+                    "name": "Itapoa",
+                    "population": 64.747
+                },
+                {
+                    "name": "Brazlandia",
+                    "population": 64.027
+                },
+                {
+                    "name": "Jardim Botanico",
+                    "population": 58.138
+                },
+                {
+                    "name": "Sudoeste Octogonal",
+                    "population": 55.258
+                },
+                {
+                    "name": "Riacho Fundo",
+                    "population": 43.815
+                },
+                {
+                    "name": "Lago Norte",
+                    "population": 37.127
+                },
+                {
+                    "name": "SCIA",
+                    "population": 36.770
+                },
+                {
+                    "name": "Cruzeiro",
+                    "population": 30.854
+                },
+                {
+                    "name": "Lago Sul",
+                    "population": 30.320
+                },
+                {
+                    "name": "Nucleo Bandeirante",
+                    "population": 24.019
+                },
+                {
+                    "name": "Park Way",
+                    "population": 23.058
+                },
+                {
+                    "name": "Candangolandia",
+                    "population": 16.338
+                },
+                {
+                    "name": "Fercal",
+                    "population": 9.742
+                },
+                {
+                    "name": "Varjao",
+                    "population": 8.829
+                },
+                {
+                    "name": "SIA",
+                    "population": 2.621
+                }
+            ]
+        },
+        {
+            "state": "Sao Paulo",
+            "cities": [
+                {
+                    "name": "Adamantina",
+                    "population": 35.111
+                },
+                {
+                    "name": "Adolfo",
+                    "population": 3.554
+                },
+                {
+                    "name": "Aguaí",
+                    "population": 36.648
+                },
+                {
+                    "name": "Águas da Prata",
+                    "population": 8.221
+                },
+                {
+                    "name": "Águas de Lindóia",
+                    "population": 18.808
+                },
+                {
+                    "name": "Águas de Santa Bárbara",
+                    "population": 6.109
+                },
+                {
+                    "name": "Águas de São Pedro",
+                    "population": 3.521
+                },
+                {
+                    "name": "Agudos",
+                    "population": 37.401
+                },
+                {
+                    "name": "Alambari",
+                    "population": 6.129
+                },
+                {
+                    "name": "Alfredo Marcondes",
+                    "population": 4.184
+                },
+                {
+                    "name": "Altair",
+                    "population": 4.186
+                },
+                {
+                    "name": "Altinópolis",
+                    "population": 16.203
+                },
+                {
+                    "name": "Alto Alegre",
+                    "population": 4.088
+                },
+                {
+                    "name": "Alumínio",
+                    "population": 18.767
+                },
+                {
+                    "name": "Álvares Florence",
+                    "population": 3.647
+                },
+                {
+                    "name": "Álvares Machado",
+                    "population": 24.998
+                },
+                {
+                    "name": "Álvaro de Carvalho",
+                    "population": 5.274
+                },
+                {
+                    "name": "Alvinlândia",
+                    "population": 3.237
+                },
+                {
+                    "name": "Americana",
+                    "population": 242.018
+                },
+                {
+                    "name": "Américo Brasiliense",
+                    "population": 41.032
+                },
+                {
+                    "name": "Américo de Campos",
+                    "population": 5.981
+                },
+                {
+                    "name": "Amparo",
+                    "population": 72.677
+                },
+                {
+                    "name": "Analândia",
+                    "population": 5.056
+                },
+                {
+                    "name": "Andradina",
+                    "population": 57.202
+                },
+                {
+                    "name": "Angatuba",
+                    "population": 25.479
+                },
+                {
+                    "name": "Anhembi",
+                    "population": 6.819
+                },
+                {
+                    "name": "Anhumas",
+                    "population": 4.144
+                },
+                {
+                    "name": "Aparecida",
+                    "population": 36.185
+                },
+                {
+                    "name": "Aparecida d'Oeste",
+                    "population": 4.158
+                },
+                {
+                    "name": "Apiaí",
+                    "population": 24.226
+                },
+                {
+                    "name": "Araçariguama",
+                    "population": 22.860
+                },
+                {
+                    "name": "Araçatuba",
+                    "population": 198.129
+                },
+                {
+                    "name": "Araçoiaba da Serra",
+                    "population": 34.776
+                },
+                {
+                    "name": "Aramina",
+                    "population": 5.655
+                },
+                {
+                    "name": "Arandu",
+                    "population": 6.365
+                },
+                {
+                    "name": "Arapeí",
+                    "population": 2.460
+                },
+                {
+                    "name": "Araraquara",
+                    "population": 238.339
+                },
+                {
+                    "name": "Araras",
+                    "population": 135.506
+                },
+                {
+                    "name": "Arco-Íris",
+                    "population": 1.773
+                },
+                {
+                    "name": "Arealva",
+                    "population": 8.613
+                },
+                {
+                    "name": "Areias",
+                    "population": 3.896
+                },
+                {
+                    "name": "Areiópolis",
+                    "population": 11.158
+                },
+                {
+                    "name": "Ariranha",
+                    "population": 9.761
+                },
+                {
+                    "name": "Artur Nogueira",
+                    "population": 55.340
+                },
+                {
+                    "name": "Arujá",
+                    "population": 91.157
+                },
+                {
+                    "name": "Aspásia",
+                    "population": 1.818
+                },
+                {
+                    "name": "Assis",
+                    "population": 105.087
+                },
+                {
+                    "name": "Atibaia",
+                    "population": 144.088
+                },
+                {
+                    "name": "Auriflama",
+                    "population": 15.253
+                },
+                {
+                    "name": "Avaí",
+                    "population": 5.436
+                },
+                {
+                    "name": "Avanhandava",
+                    "population": 13.859
+                },
+                {
+                    "name": "Avaré",
+                    "population": 91.232
+                },
+                {
+                    "name": "Bady Bassitt",
+                    "population": 17.761
+                },
+                {
+                    "name": "Balbinos",
+                    "population": 5.934
+                },
+                {
+                    "name": "Bálsamo",
+                    "population": 9.139
+                },
+                {
+                    "name": "Bananal",
+                    "population": 10.993
+                },
+                {
+                    "name": "Barão de Antonina",
+                    "population": 3.498
+                },
+                {
+                    "name": "Barbosa",
+                    "population": 7.468
+                },
+                {
+                    "name": "Bariri",
+                    "population": 35.558
+                },
+                {
+                    "name": "Barra Bonita",
+                    "population": 36.126
+                },
+                {
+                    "name": "Barra do Chapéu",
+                    "population": 5.760
+                },
+                {
+                    "name": "Barra do Turvo",
+                    "population": 7.632
+                },
+                {
+                    "name": "Barretos",
+                    "population": 122.833
+                },
+                {
+                    "name": "Barrinha",
+                    "population": 33.180
+                },
+                {
+                    "name": "Barueri",
+                    "population": 276.982
+                },
+                {
+                    "name": "Bastos",
+                    "population": 20.953
+                },
+                {
+                    "name": "Batatais",
+                    "population": 62.980
+                },
+                {
+                    "name": "Bauru",
+                    "population": 379.297
+                },
+                {
+                    "name": "Bebedouro",
+                    "population": 77.555
+                },
+                {
+                    "name": "Bento de Abreu",
+                    "population": 3.005
+                },
+                {
+                    "name": "Bernardino de Campos",
+                    "population": 11.158
+                },
+                {
+                    "name": "Bertioga",
+                    "population": 64.723
+                },
+                {
+                    "name": "Bilac",
+                    "population": 8.117
+                },
+                {
+                    "name": "Birigui",
+                    "population": 124.883
+                },
+                {
+                    "name": "Biritiba Mirim",
+                    "population": 32.936
+                },
+                {
+                    "name": "Boa Esperança do Sul",
+                    "population": 15.018
+                },
+                {
+                    "name": "Bocaina",
+                    "population": 12.452
+                },
+                {
+                    "name": "Bofete",
+                    "population": 11.921
+                },
+                {
+                    "name": "Boituva",
+                    "population": 62.170
+                },
+                {
+                    "name": "Bom Jesus dos Perdões",
+                    "population": 25.985
+                },
+                {
+                    "name": "Bom Sucesso de Itararé",
+                    "population": 3.984
+                },
+                {
+                    "name": "Borá",
+                    "population": 838
+                },
+                {
+                    "name": "Boracéia",
+                    "population": 4.868
+                },
+                {
+                    "name": "Borborema",
+                    "population": 16.164
+                },
+                {
+                    "name": "Borebi",
+                    "population": 2.683
+                },
+                {
+                    "name": "Botucatu",
+                    "population": 148.130
+                },
+                {
+                    "name": "Bragança Paulista",
+                    "population": 170.533
+                },
+                {
+                    "name": "Braúna",
+                    "population": 5.741
+                },
+                {
+                    "name": "Brejo Alegre",
+                    "population": 2.889
+                },
+                {
+                    "name": "Brodowski",
+                    "population": 25.277
+                },
+                {
+                    "name": "Brotas",
+                    "population": 24.636
+                },
+                {
+                    "name": "Buri",
+                    "population": 19.965
+                },
+                {
+                    "name": "Buritama",
+                    "population": 17.281
+                },
+                {
+                    "name": "Buritizal",
+                    "population": 4.514
+                },
+                {
+                    "name": "Cabrália Paulista",
+                    "population": 4.243
+                },
+                {
+                    "name": "Cabreúva",
+                    "population": 50.429
+                },
+                {
+                    "name": "Caçapava",
+                    "population": 95.018
+                },
+                {
+                    "name": "Cachoeira Paulista",
+                    "population": 33.581
+                },
+                {
+                    "name": "Caconde",
+                    "population": 19.009
+                },
+                {
+                    "name": "Cafelândia",
+                    "population": 17.843
+                },
+                {
+                    "name": "Caiabu",
+                    "population": 4.193
+                },
+                {
+                    "name": "Caieiras",
+                    "population": 102.775
+                },
+                {
+                    "name": "Caiuá",
+                    "population": 5.946
+                },
+                {
+                    "name": "Cajamar",
+                    "population": 77.934
+                },
+                {
+                    "name": "Cajati",
+                    "population": 28.494
+                },
+                {
+                    "name": "Cajobi",
+                    "population": 10.596
+                },
+                {
+                    "name": "Cajuru",
+                    "population": 26.393
+                },
+                {
+                    "name": "Campina do Monte Alegre",
+                    "population": 6.057
+                },
+                {
+                    "name": "Campinas",
+                    "population": 1.213792
+                },
+                {
+                    "name": "Campo Limpo Paulista",
+                    "population": 85.541
+                },
+                {
+                    "name": "Campos do Jordão",
+                    "population": 52.405
+                },
+                {
+                    "name": "Campos Novos Paulista",
+                    "population": 4.997
+                },
+                {
+                    "name": "Cananéia",
+                    "population": 12.541
+                },
+                {
+                    "name": "Canas",
+                    "population": 5.204
+                },
+                {
+                    "name": "Cândido Mota",
+                    "population": 31.346
+                },
+                {
+                    "name": "Cândido Rodrigues",
+                    "population": 2.799
+                },
+                {
+                    "name": "Canitar",
+                    "population": 5.292
+                },
+                {
+                    "name": "Capão Bonito",
+                    "population": 47.118
+                },
+                {
+                    "name": "Capela do Alto",
+                    "population": 20.985
+                },
+                {
+                    "name": "Capivari",
+                    "population": 56.379
+                },
+                {
+                    "name": "Caraguatatuba",
+                    "population": 123.389
+                },
+                {
+                    "name": "Carapicuíba",
+                    "population": 403.183
+                },
+                {
+                    "name": "Cardoso",
+                    "population": 12.349
+                },
+                {
+                    "name": "Casa Branca",
+                    "population": 30.520
+                },
+                {
+                    "name": "Cássia dos Coqueiros",
+                    "population": 2.505
+                },
+                {
+                    "name": "Castilho",
+                    "population": 21.267
+                },
+                {
+                    "name": "Catanduva",
+                    "population": 122.497
+                },
+                {
+                    "name": "Catiguá",
+                    "population": 7.855
+                },
+                {
+                    "name": "Cedral",
+                    "population": 9.346
+                },
+                {
+                    "name": "Cerqueira César",
+                    "population": 20.191
+                },
+                {
+                    "name": "Cerquilho",
+                    "population": 49.802
+                },
+                {
+                    "name": "Cesário Lange",
+                    "population": 18.375
+                },
+                {
+                    "name": "Charqueada",
+                    "population": 17.367
+                },
+                {
+                    "name": "Clementina",
+                    "population": 8.757
+                },
+                {
+                    "name": "Colina",
+                    "population": 18.535
+                },
+                {
+                    "name": "Colômbia",
+                    "population": 6.216
+                },
+                {
+                    "name": "Conchal",
+                    "population": 28.273
+                },
+                {
+                    "name": "Conchas",
+                    "population": 18.019
+                },
+                {
+                    "name": "Cordeirópolis",
+                    "population": 24.826
+                },
+                {
+                    "name": "Coroados",
+                    "population": 6.129
+                },
+                {
+                    "name": "Coronel Macedo",
+                    "population": 4.635
+                },
+                {
+                    "name": "Corumbataí",
+                    "population": 4.064
+                },
+                {
+                    "name": "Cosmópolis",
+                    "population": 73.474
+                },
+                {
+                    "name": "Cosmorama",
+                    "population": 7.298
+                },
+                {
+                    "name": "Cotia",
+                    "population": 253.608
+                },
+                {
+                    "name": "Cravinhos",
+                    "population": 35.579
+                },
+                {
+                    "name": "Cristais Paulista",
+                    "population": 8.718
+                },
+                {
+                    "name": "Cruzália",
+                    "population": 2.046
+                },
+                {
+                    "name": "Cruzeiro",
+                    "population": 82.571
+                },
+                {
+                    "name": "Cubatão",
+                    "population": 131.626
+                },
+                {
+                    "name": "Cunha",
+                    "population": 21.459
+                },
+                {
+                    "name": "Descalvado",
+                    "population": 33.910
+                },
+                {
+                    "name": "Diadema",
+                    "population": 426.757
+                },
+                {
+                    "name": "Dirce Reis",
+                    "population": 1.799
+                },
+                {
+                    "name": "Divinolândia",
+                    "population": 11.086
+                },
+                {
+                    "name": "Dobrada",
+                    "population": 9.010
+                },
+                {
+                    "name": "Dois Córregos",
+                    "population": 27.512
+                },
+                {
+                    "name": "Dolcinópolis",
+                    "population": 2.112
+                },
+                {
+                    "name": "Dourado",
+                    "population": 8.878
+                },
+                {
+                    "name": "Dracena",
+                    "population": 47.043
+                },
+                {
+                    "name": "Duartina",
+                    "population": 12.433
+                },
+                {
+                    "name": "Dumont",
+                    "population": 10.023
+                },
+                {
+                    "name": "Echaporã",
+                    "population": 6.064
+                },
+                {
+                    "name": "Eldorado",
+                    "population": 15.544
+                },
+                {
+                    "name": "Elias Fausto",
+                    "population": 17.936
+                },
+                {
+                    "name": "Elisiário",
+                    "population": 3.697
+                },
+                {
+                    "name": "Embaúba",
+                    "population": 2.449
+                },
+                {
+                    "name": "Embu das Artes",
+                    "population": 276.535
+                },
+                {
+                    "name": "Embu-Guaçu",
+                    "population": 69.901
+                },
+                {
+                    "name": "Emilianópolis",
+                    "population": 3.227
+                },
+                {
+                    "name": "Engenheiro Coelho",
+                    "population": 21.249
+                },
+                {
+                    "name": "Espírito Santo do Pinhal",
+                    "population": 44.471
+                },
+                {
+                    "name": "Espírito Santo do Turvo",
+                    "population": 4.878
+                },
+                {
+                    "name": "Estrela d'Oeste",
+                    "population": 8.419
+                },
+                {
+                    "name": "Estrela do Norte",
+                    "population": 2.770
+                },
+                {
+                    "name": "Euclides da Cunha Paulista",
+                    "population": 9.325
+                },
+                {
+                    "name": "Fartura",
+                    "population": 16.070
+                },
+                {
+                    "name": "Fernandópolis",
+                    "population": 69.402
+                },
+                {
+                    "name": "Fernando Prestes",
+                    "population": 5.794
+                },
+                {
+                    "name": "Fernão",
+                    "population": 1.727
+                },
+                {
+                    "name": "Ferraz de Vasconcelos",
+                    "population": 196.500
+                },
+                {
+                    "name": "Flora Rica",
+                    "population": 1.430
+                },
+                {
+                    "name": "Floreal",
+                    "population": 2.900
+                },
+                {
+                    "name": "Flórida Paulista",
+                    "population": 14.790
+                },
+                {
+                    "name": "Florínea",
+                    "population": 2.653
+                },
+                {
+                    "name": "Franca",
+                    "population": 355.901
+                },
+                {
+                    "name": "Francisco Morato",
+                    "population": 177.633
+                },
+                {
+                    "name": "Franco da Rocha",
+                    "population": 156.492
+                },
+                {
+                    "name": "Gabriel Monteiro",
+                    "population": 2.776
+                },
+                {
+                    "name": "Gália",
+                    "population": 6.482
+                },
+                {
+                    "name": "Garça",
+                    "population": 44.409
+                },
+                {
+                    "name": "Gastão Vidigal",
+                    "population": 4.860
+                },
+                {
+                    "name": "Gavião Peixoto",
+                    "population": 4.815
+                },
+                {
+                    "name": "General Salgado",
+                    "population": 10.862
+                },
+                {
+                    "name": "Getulina",
+                    "population": 11.447
+                },
+                {
+                    "name": "Glicério",
+                    "population": 4.829
+                },
+                {
+                    "name": "Guaiçara",
+                    "population": 12.294
+                },
+                {
+                    "name": "Guaimbê",
+                    "population": 5.785
+                },
+                {
+                    "name": "Guaíra",
+                    "population": 41.040
+                },
+                {
+                    "name": "Guapiaçu",
+                    "population": 21.775
+                },
+                {
+                    "name": "Guapiara",
+                    "population": 17.025
+                },
+                {
+                    "name": "Guará",
+                    "population": 21.308
+                },
+                {
+                    "name": "Guaraçaí",
+                    "population": 8.290
+                },
+                {
+                    "name": "Guaraci",
+                    "population": 11.287
+                },
+                {
+                    "name": "Guarani d'Oeste",
+                    "population": 1.998
+                },
+                {
+                    "name": "Guarantã",
+                    "population": 6.675
+                },
+                {
+                    "name": "Guararapes",
+                    "population": 33.100
+                },
+                {
+                    "name": "Guararema",
+                    "population": 30.136
+                },
+                {
+                    "name": "Guaratinguetá",
+                    "population": 122.505
+                },
+                {
+                    "name": "Guareí",
+                    "population": 18.887
+                },
+                {
+                    "name": "Guariba",
+                    "population": 40.487
+                },
+                {
+                    "name": "Guarujá",
+                    "population": 322.750
+                },
+                {
+                    "name": "Guarulhos",
+                    "population": 1.392121
+                },
+                {
+                    "name": "Guatapará",
+                    "population": 7.709
+                },
+                {
+                    "name": "Guzolândia",
+                    "population": 5.307
+                },
+                {
+                    "name": "Herculândia",
+                    "population": 9.588
+                },
+                {
+                    "name": "Holambra",
+                    "population": 15.272
+                },
+                {
+                    "name": "Hortolândia",
+                    "population": 234.259
+                },
+                {
+                    "name": "Iacanga",
+                    "population": 11.858
+                },
+                {
+                    "name": "Iacri",
+                    "population": 6.295
+                },
+                {
+                    "name": "Iaras",
+                    "population": 9.517
+                },
+                {
+                    "name": "Ibaté",
+                    "population": 35.472
+                },
+                {
+                    "name": "Ibirá",
+                    "population": 12.518
+                },
+                {
+                    "name": "Ibirarema",
+                    "population": 7.841
+                },
+                {
+                    "name": "Ibitinga",
+                    "population": 60.600
+                },
+                {
+                    "name": "Ibiúna",
+                    "population": 79.479
+                },
+                {
+                    "name": "Icém",
+                    "population": 8.304
+                },
+                {
+                    "name": "Iepê",
+                    "population": 8.194
+                },
+                {
+                    "name": "Igaraçu do Tietê",
+                    "population": 24.749
+                },
+                {
+                    "name": "Igarapava",
+                    "population": 30.614
+                },
+                {
+                    "name": "Igaratá",
+                    "population": 9.583
+                },
+                {
+                    "name": "Iguape",
+                    "population": 30.989
+                },
+                {
+                    "name": "Ilhabela",
+                    "population": 35.591
+                },
+                {
+                    "name": "Ilha Comprida",
+                    "population": 11.362
+                },
+                {
+                    "name": "Ilha Solteira",
+                    "population": 26.788
+                },
+                {
+                    "name": "Indaiatuba",
+                    "population": 256.223
+                },
+                {
+                    "name": "Indiana",
+                    "population": 4.879
+                },
+                {
+                    "name": "Indiaporã",
+                    "population": 3.886
+                },
+                {
+                    "name": "Inúbia Paulista",
+                    "population": 4.019
+                },
+                {
+                    "name": "Ipaussu",
+                    "population": 15.069
+                },
+                {
+                    "name": "Iperó",
+                    "population": 37.964
+                },
+                {
+                    "name": "Ipeúna",
+                    "population": 7.687
+                },
+                {
+                    "name": "Ipiguá",
+                    "population": 5.476
+                },
+                {
+                    "name": "Iporanga",
+                    "population": 4.199
+                },
+                {
+                    "name": "Ipuã",
+                    "population": 16.604
+                },
+                {
+                    "name": "Iracemápolis",
+                    "population": 24.614
+                },
+                {
+                    "name": "Irapuã",
+                    "population": 8.048
+                },
+                {
+                    "name": "Irapuru",
+                    "population": 8.325
+                },
+                {
+                    "name": "Itaberá",
+                    "population": 17.480
+                },
+                {
+                    "name": "Itaí",
+                    "population": 27.382
+                },
+                {
+                    "name": "Itajobi",
+                    "population": 15.297
+                },
+                {
+                    "name": "Itaju",
+                    "population": 3.887
+                },
+                {
+                    "name": "Itanhaém",
+                    "population": 103.102
+                },
+                {
+                    "name": "Itaoca",
+                    "population": 3.330
+                },
+                {
+                    "name": "Itapecerica da Serra",
+                    "population": 177.662
+                },
+                {
+                    "name": "Itapetininga",
+                    "population": 165.526
+                },
+                {
+                    "name": "Itapeva",
+                    "population": 94.804
+                },
+                {
+                    "name": "Itapevi",
+                    "population": 240.961
+                },
+                {
+                    "name": "Itapira",
+                    "population": 75.234
+                },
+                {
+                    "name": "Itapirapuã Paulista",
+                    "population": 4.268
+                },
+                {
+                    "name": "Itápolis",
+                    "population": 43.331
+                },
+                {
+                    "name": "Itaporanga",
+                    "population": 15.173
+                },
+                {
+                    "name": "Itapuí",
+                    "population": 14.147
+                },
+                {
+                    "name": "Itapura",
+                    "population": 4.951
+                },
+                {
+                    "name": "Itaquaquecetuba",
+                    "population": 375.011
+                },
+                {
+                    "name": "Itararé",
+                    "population": 50.642
+                },
+                {
+                    "name": "Itariri",
+                    "population": 17.598
+                },
+                {
+                    "name": "Itatiba",
+                    "population": 122.581
+                },
+                {
+                    "name": "Itatinga",
+                    "population": 20.921
+                },
+                {
+                    "name": "Itirapina",
+                    "population": 18.387
+                },
+                {
+                    "name": "Itirapuã",
+                    "population": 6.543
+                },
+                {
+                    "name": "Itobi",
+                    "population": 7.852
+                },
+                {
+                    "name": "Itu",
+                    "population": 175.568
+                },
+                {
+                    "name": "Itupeva",
+                    "population": 62.813
+                },
+                {
+                    "name": "Ituverava",
+                    "population": 42.045
+                },
+                {
+                    "name": "Jaborandi",
+                    "population": 6.946
+                },
+                {
+                    "name": "Jaboticabal",
+                    "population": 77.652
+                },
+                {
+                    "name": "Jacareí",
+                    "population": 235.416
+                },
+                {
+                    "name": "Jaci",
+                    "population": 7.196
+                },
+                {
+                    "name": "Jacupiranga",
+                    "population": 17.889
+                },
+                {
+                    "name": "Jaguariúna",
+                    "population": 58.722
+                },
+                {
+                    "name": "Jales",
+                    "population": 49.201
+                },
+                {
+                    "name": "Jambeiro",
+                    "population": 6.717
+                },
+                {
+                    "name": "Jandira",
+                    "population": 126.356
+                },
+                {
+                    "name": "Jardinópolis",
+                    "population": 44.970
+                },
+                {
+                    "name": "Jarinu",
+                    "population": 30.617
+                },
+                {
+                    "name": "Jaú",
+                    "population": 151.881
+                },
+                {
+                    "name": "Jeriquara",
+                    "population": 3.151
+                },
+                {
+                    "name": "Joanópolis",
+                    "population": 13.338
+                },
+                {
+                    "name": "João Ramalho",
+                    "population": 4.551
+                },
+                {
+                    "name": "José Bonifácio",
+                    "population": 37.366
+                },
+                {
+                    "name": "Júlio Mesquita",
+                    "population": 4.800
+                },
+                {
+                    "name": "Jumirim",
+                    "population": 3.418
+                },
+                {
+                    "name": "Jundiaí",
+                    "population": 423.006
+                },
+                {
+                    "name": "Junqueirópolis",
+                    "population": 20.831
+                },
+                {
+                    "name": "Juquiá",
+                    "population": 18.718
+                },
+                {
+                    "name": "Juquitiba",
+                    "population": 31.646
+                },
+                {
+                    "name": "Lagoinha",
+                    "population": 4.889
+                },
+                {
+                    "name": "Laranjal Paulista",
+                    "population": 28.785
+                },
+                {
+                    "name": "Lavínia",
+                    "population": 12.285
+                },
+                {
+                    "name": "Lavrinhas",
+                    "population": 7.311
+                },
+                {
+                    "name": "Leme",
+                    "population": 104.346
+                },
+                {
+                    "name": "Lençóis Paulista",
+                    "population": 68.990
+                },
+                {
+                    "name": "Limeira",
+                    "population": 308.482
+                },
+                {
+                    "name": "Lindóia",
+                    "population": 8.092
+                },
+                {
+                    "name": "Lins",
+                    "population": 78.503
+                },
+                {
+                    "name": "Lorena",
+                    "population": 89.125
+                },
+                {
+                    "name": "Lourdes",
+                    "population": 2.300
+                },
+                {
+                    "name": "Louveira",
+                    "population": 49.993
+                },
+                {
+                    "name": "Lucélia",
+                    "population": 21.886
+                },
+                {
+                    "name": "Lucianópolis",
+                    "population": 2.403
+                },
+                {
+                    "name": "Luís Antônio",
+                    "population": 15.292
+                },
+                {
+                    "name": "Luiziânia",
+                    "population": 5.855
+                },
+                {
+                    "name": "Lupércio",
+                    "population": 4.596
+                },
+                {
+                    "name": "Lutécia",
+                    "population": 2.636
+                },
+                {
+                    "name": "Macatuba",
+                    "population": 17.214
+                },
+                {
+                    "name": "Macaubal",
+                    "population": 8.147
+                },
+                {
+                    "name": "Macedônia",
+                    "population": 3.692
+                },
+                {
+                    "name": "Magda",
+                    "population": 3.102
+                },
+                {
+                    "name": "Mairinque",
+                    "population": 47.441
+                },
+                {
+                    "name": "Mairiporã",
+                    "population": 101.937
+                },
+                {
+                    "name": "Manduri",
+                    "population": 9.910
+                },
+                {
+                    "name": "Marabá Paulista",
+                    "population": 5.948
+                },
+                {
+                    "name": "Maracaí",
+                    "population": 14.036
+                },
+                {
+                    "name": "Marapoama",
+                    "population": 3.064
+                },
+                {
+                    "name": "Mariápolis",
+                    "population": 4.091
+                },
+                {
+                    "name": "Marília",
+                    "population": 240.590
+                },
+                {
+                    "name": "Marinópolis",
+                    "population": 2.106
+                },
+                {
+                    "name": "Martinópolis",
+                    "population": 26.628
+                },
+                {
+                    "name": "Matão",
+                    "population": 83.626
+                },
+                {
+                    "name": "Mauá",
+                    "population": 477.552
+                },
+                {
+                    "name": "Mendonça",
+                    "population": 5.565
+                },
+                {
+                    "name": "Meridiano",
+                    "population": 3.824
+                },
+                {
+                    "name": "Mesópolis",
+                    "population": 1.905
+                },
+                {
+                    "name": "Miguelópolis",
+                    "population": 22.355
+                },
+                {
+                    "name": "Mineiros do Tietê",
+                    "population": 12.966
+                },
+                {
+                    "name": "Miracatu",
+                    "population": 19.643
+                },
+                {
+                    "name": "Mira Estrela",
+                    "population": 3.106
+                },
+                {
+                    "name": "Mirandópolis",
+                    "population": 29.706
+                },
+                {
+                    "name": "Mirante do Paranapanema",
+                    "population": 18.338
+                },
+                {
+                    "name": "Mirassol",
+                    "population": 60.303
+                },
+                {
+                    "name": "Mirassolândia",
+                    "population": 4.919
+                },
+                {
+                    "name": "Mococa",
+                    "population": 68.980
+                },
+                {
+                    "name": "Mogi das Cruzes",
+                    "population": 450.785
+                },
+                {
+                    "name": "Mogi Guaçu",
+                    "population": 153.033
+                },
+                {
+                    "name": "Mogi Mirim",
+                    "population": 93.650
+                },
+                {
+                    "name": "Mombuca",
+                    "population": 3.508
+                },
+                {
+                    "name": "Monções",
+                    "population": 2.267
+                },
+                {
+                    "name": "Mongaguá",
+                    "population": 57.648
+                },
+                {
+                    "name": "Monte Alegre do Sul",
+                    "population": 8.111
+                },
+                {
+                    "name": "Monte Alto",
+                    "population": 50.772
+                },
+                {
+                    "name": "Monte Aprazível",
+                    "population": 25.373
+                },
+                {
+                    "name": "Monte Azul Paulista",
+                    "population": 18.968
+                },
+                {
+                    "name": "Monte Castelo",
+                    "population": 4.166
+                },
+                {
+                    "name": "Monteiro Lobato",
+                    "population": 4.696
+                },
+                {
+                    "name": "Monte Mor",
+                    "population": 60.754
+                },
+                {
+                    "name": "Morro Agudo",
+                    "population": 33.288
+                },
+                {
+                    "name": "Morungaba",
+                    "population": 13.781
+                },
+                {
+                    "name": "Motuca",
+                    "population": 4.795
+                },
+                {
+                    "name": "Murutinga do Sul",
+                    "population": 4.506
+                },
+                {
+                    "name": "Nantes",
+                    "population": 3.179
+                },
+                {
+                    "name": "Narandiba",
+                    "population": 4.904
+                },
+                {
+                    "name": "Natividade da Serra",
+                    "population": 6.642
+                },
+                {
+                    "name": "Nazaré Paulista",
+                    "population": 18.698
+                },
+                {
+                    "name": "Neves Paulista",
+                    "population": 8.923
+                },
+                {
+                    "name": "Nhandeara",
+                    "population": 11.527
+                },
+                {
+                    "name": "Nipoã",
+                    "population": 5.298
+                },
+                {
+                    "name": "Nova Aliança",
+                    "population": 7.068
+                },
+                {
+                    "name": "Nova Campina",
+                    "population": 9.860
+                },
+                {
+                    "name": "Nova Canaã Paulista",
+                    "population": 1.852
+                },
+                {
+                    "name": "Nova Castilho",
+                    "population": 1.278
+                },
+                {
+                    "name": "Nova Europa",
+                    "population": 11.355
+                },
+                {
+                    "name": "Nova Granada",
+                    "population": 21.689
+                },
+                {
+                    "name": "Nova Guataporanga",
+                    "population": 2.325
+                },
+                {
+                    "name": "Nova Independência",
+                    "population": 4.053
+                },
+                {
+                    "name": "Novais",
+                    "population": 5.945
+                },
+                {
+                    "name": "Nova Luzitânia",
+                    "population": 4.160
+                },
+                {
+                    "name": "Nova Odessa",
+                    "population": 60.956
+                },
+                {
+                    "name": "Novo Horizonte",
+                    "population": 41.414
+                },
+                {
+                    "name": "Nuporanga",
+                    "population": 7.478
+                },
+                {
+                    "name": "Ocauçu",
+                    "population": 4.291
+                },
+                {
+                    "name": "Óleo",
+                    "population": 2.471
+                },
+                {
+                    "name": "Olímpia",
+                    "population": 55.130
+                },
+                {
+                    "name": "Onda Verde",
+                    "population": 4.422
+                },
+                {
+                    "name": "Oriente",
+                    "population": 6.542
+                },
+                {
+                    "name": "Orindiúva",
+                    "population": 7.194
+                },
+                {
+                    "name": "Orlândia",
+                    "population": 44.360
+                },
+                {
+                    "name": "Osasco",
+                    "population": 699.944
+                },
+                {
+                    "name": "Oscar Bressane",
+                    "population": 2.603
+                },
+                {
+                    "name": "Osvaldo Cruz",
+                    "population": 33.000
+                },
+                {
+                    "name": "Ourinhos",
+                    "population": 114.352
+                },
+                {
+                    "name": "Ouroeste",
+                    "population": 10.539
+                },
+                {
+                    "name": "Ouro Verde",
+                    "population": 8.620
+                },
+                {
+                    "name": "Pacaembu",
+                    "population": 14.263
+                },
+                {
+                    "name": "Palestina",
+                    "population": 13.123
+                },
+                {
+                    "name": "Palmares Paulista",
+                    "population": 13.486
+                },
+                {
+                    "name": "Palmeira d'Oeste",
+                    "population": 9.227
+                },
+                {
+                    "name": "Palmital",
+                    "population": 22.272
+                },
+                {
+                    "name": "Panorama",
+                    "population": 15.862
+                },
+                {
+                    "name": "Paraguaçu Paulista",
+                    "population": 45.945
+                },
+                {
+                    "name": "Paraibuna",
+                    "population": 18.263
+                },
+                {
+                    "name": "Paraíso",
+                    "population": 6.496
+                },
+                {
+                    "name": "Paranapanema",
+                    "population": 20.395
+                },
+                {
+                    "name": "Paranapuã",
+                    "population": 4.095
+                },
+                {
+                    "name": "Parapuã",
+                    "population": 10.949
+                },
+                {
+                    "name": "Pardinho",
+                    "population": 6.508
+                },
+                {
+                    "name": "Pariquera-Açu",
+                    "population": 19.723
+                },
+                {
+                    "name": "Parisi",
+                    "population": 2.169
+                },
+                {
+                    "name": "Patrocínio Paulista",
+                    "population": 14.807
+                },
+                {
+                    "name": "Paulicéia",
+                    "population": 7.454
+                },
+                {
+                    "name": "Paulínia",
+                    "population": 112.003
+                },
+                {
+                    "name": "Paulistânia",
+                    "population": 1.834
+                },
+                {
+                    "name": "Paulo de Faria",
+                    "population": 8.959
+                },
+                {
+                    "name": "Pederneiras",
+                    "population": 47.111
+                },
+                {
+                    "name": "Pedra Bela",
+                    "population": 6.110
+                },
+                {
+                    "name": "Pedranópolis",
+                    "population": 2.481
+                },
+                {
+                    "name": "Pedregulho",
+                    "population": 16.811
+                },
+                {
+                    "name": "Pedreira",
+                    "population": 48.463
+                },
+                {
+                    "name": "Pedrinhas Paulista",
+                    "population": 3.101
+                },
+                {
+                    "name": "Pedro de Toledo",
+                    "population": 11.421
+                },
+                {
+                    "name": "Penápolis",
+                    "population": 63.757
+                },
+                {
+                    "name": "Pereira Barreto",
+                    "population": 25.677
+                },
+                {
+                    "name": "Pereiras",
+                    "population": 8.773
+                },
+                {
+                    "name": "Peruíbe",
+                    "population": 69.001
+                },
+                {
+                    "name": "Piacatu",
+                    "population": 6.038
+                },
+                {
+                    "name": "Piedade",
+                    "population": 55.542
+                },
+                {
+                    "name": "Pilar do Sul",
+                    "population": 29.402
+                },
+                {
+                    "name": "Pindamonhangaba",
+                    "population": 170.132
+                },
+                {
+                    "name": "Pindorama",
+                    "population": 17.216
+                },
+                {
+                    "name": "Pinhalzinho",
+                    "population": 15.388
+                },
+                {
+                    "name": "Piquerobi",
+                    "population": 3.699
+                },
+                {
+                    "name": "Piquete",
+                    "population": 13.575
+                },
+                {
+                    "name": "Piracaia",
+                    "population": 27.462
+                },
+                {
+                    "name": "Piracicaba",
+                    "population": 407.252
+                },
+                {
+                    "name": "Piraju",
+                    "population": 29.869
+                },
+                {
+                    "name": "Pirajuí",
+                    "population": 25.719
+                },
+                {
+                    "name": "Pirangi",
+                    "population": 11.471
+                },
+                {
+                    "name": "Pirapora do Bom Jesus",
+                    "population": 19.178
+                },
+                {
+                    "name": "Pirapozinho",
+                    "population": 27.754
+                },
+                {
+                    "name": "Pirassununga",
+                    "population": 76.877
+                },
+                {
+                    "name": "Piratininga",
+                    "population": 13.765
+                },
+                {
+                    "name": "Pitangueiras",
+                    "population": 40.080
+                },
+                {
+                    "name": "Planalto",
+                    "population": 5.304
+                },
+                {
+                    "name": "Platina",
+                    "population": 3.578
+                },
+                {
+                    "name": "Poá",
+                    "population": 118.349
+                },
+                {
+                    "name": "Poloni",
+                    "population": 6.113
+                },
+                {
+                    "name": "Pompéia",
+                    "population": 22.172
+                },
+                {
+                    "name": "Pongaí",
+                    "population": 3.400
+                },
+                {
+                    "name": "Pontal",
+                    "population": 50.852
+                },
+                {
+                    "name": "Pontalinda",
+                    "population": 4.674
+                },
+                {
+                    "name": "Pontes Gestal",
+                    "population": 2.577
+                },
+                {
+                    "name": "Populina",
+                    "population": 4.152
+                },
+                {
+                    "name": "Porangaba",
+                    "population": 10.067
+                },
+                {
+                    "name": "Porto Feliz",
+                    "population": 53.402
+                },
+                {
+                    "name": "Porto Ferreira",
+                    "population": 56.504
+                },
+                {
+                    "name": "Potim",
+                    "population": 25.130
+                },
+                {
+                    "name": "Potirendaba",
+                    "population": 17.516
+                },
+                {
+                    "name": "Pracinha",
+                    "population": 4.212
+                },
+                {
+                    "name": "Pradópolis",
+                    "population": 21.873
+                },
+                {
+                    "name": "Praia Grande",
+                    "population": 330.845
+                },
+                {
+                    "name": "Pratânia",
+                    "population": 5.317
+                },
+                {
+                    "name": "Presidente Alves",
+                    "population": 4.080
+                },
+                {
+                    "name": "Presidente Bernardes",
+                    "population": 13.023
+                },
+                {
+                    "name": "Presidente Epitácio",
+                    "population": 44.389
+                },
+                {
+                    "name": "Presidente Prudente",
+                    "population": 230.371
+                },
+                {
+                    "name": "Presidente Venceslau",
+                    "population": 39.583
+                },
+                {
+                    "name": "Promissão",
+                    "population": 40.828
+                },
+                {
+                    "name": "Quadra",
+                    "population": 3.854
+                },
+                {
+                    "name": "Quatá",
+                    "population": 14.210
+                },
+                {
+                    "name": "Queiroz",
+                    "population": 3.460
+                },
+                {
+                    "name": "Queluz",
+                    "population": 13.606
+                },
+                {
+                    "name": "Quintana",
+                    "population": 6.688
+                },
+                {
+                    "name": "Rafard",
+                    "population": 9.101
+                },
+                {
+                    "name": "Rancharia",
+                    "population": 29.726
+                },
+                {
+                    "name": "Redenção da Serra",
+                    "population": 3.839
+                },
+                {
+                    "name": "Regente Feijó",
+                    "population": 20.394
+                },
+                {
+                    "name": "Reginópolis",
+                    "population": 9.837
+                },
+                {
+                    "name": "Registro",
+                    "population": 56.393
+                },
+                {
+                    "name": "Restinga",
+                    "population": 7.679
+                },
+                {
+                    "name": "Ribeira",
+                    "population": 3.330
+                },
+                {
+                    "name": "Ribeirão Bonito",
+                    "population": 13.299
+                },
+                {
+                    "name": "Ribeirão Branco",
+                    "population": 16.211
+                },
+                {
+                    "name": "Ribeirão Corrente",
+                    "population": 4.752
+                },
+                {
+                    "name": "Ribeirão do Sul",
+                    "population": 4.539
+                },
+                {
+                    "name": "Ribeirão dos Índios",
+                    "population": 2.224
+                },
+                {
+                    "name": "Ribeirão Grande",
+                    "population": 7.679
+                },
+                {
+                    "name": "Ribeirão Pires",
+                    "population": 124.159
+                },
+                {
+                    "name": "Ribeirão Preto",
+                    "population": 711.825
+                },
+                {
+                    "name": "Riversul",
+                    "population": 5.443
+                },
+                {
+                    "name": "Rifaina",
+                    "population": 3.640
+                },
+                {
+                    "name": "Rincão",
+                    "population": 10.812
+                },
+                {
+                    "name": "Rinópolis",
+                    "population": 9.961
+                },
+                {
+                    "name": "Rio Claro",
+                    "population": 208.008
+                },
+                {
+                    "name": "Rio das Pedras",
+                    "population": 35.738
+                },
+                {
+                    "name": "Rio Grande da Serra",
+                    "population": 51.436
+                },
+                {
+                    "name": "Riolândia",
+                    "population": 12.689
+                },
+                {
+                    "name": "Rosana",
+                    "population": 16.281
+                },
+                {
+                    "name": "Roseira",
+                    "population": 10.801
+                },
+                {
+                    "name": "Rubiácea",
+                    "population": 3.162
+                },
+                {
+                    "name": "Rubinéia",
+                    "population": 3.170
+                },
+                {
+                    "name": "Sabino",
+                    "population": 5.614
+                },
+                {
+                    "name": "Sagres",
+                    "population": 2.430
+                },
+                {
+                    "name": "Sales",
+                    "population": 6.407
+                },
+                {
+                    "name": "Sales Oliveira",
+                    "population": 11.998
+                },
+                {
+                    "name": "Salesópolis",
+                    "population": 17.252
+                },
+                {
+                    "name": "Salmourão",
+                    "population": 5.337
+                },
+                {
+                    "name": "Saltinho",
+                    "population": 8.393
+                },
+                {
+                    "name": "Salto",
+                    "population": 119.736
+                },
+                {
+                    "name": "Salto de Pirapora",
+                    "population": 45.860
+                },
+                {
+                    "name": "Salto Grande",
+                    "population": 9.364
+                },
+                {
+                    "name": "Sandovalina",
+                    "population": 4.354
+                },
+                {
+                    "name": "Santa Adélia",
+                    "population": 15.561
+                },
+                {
+                    "name": "Santa Albertina",
+                    "population": 6.022
+                },
+                {
+                    "name": "Santa Bárbara d'Oeste",
+                    "population": 194.390
+                },
+                {
+                    "name": "Santa Branca",
+                    "population": 14.857
+                },
+                {
+                    "name": "Santa Clara d'Oeste",
+                    "population": 2.113
+                },
+                {
+                    "name": "Santa Cruz da Conceição",
+                    "population": 4.544
+                },
+                {
+                    "name": "Santa Cruz da Esperança",
+                    "population": 2.153
+                },
+                {
+                    "name": "Santa Cruz das Palmeiras",
+                    "population": 34.737
+                },
+                {
+                    "name": "Santa Cruz do Rio Pardo",
+                    "population": 47.943
+                },
+                {
+                    "name": "Santa Ernestina",
+                    "population": 5.588
+                },
+                {
+                    "name": "Santa Fé do Sul",
+                    "population": 32.563
+                },
+                {
+                    "name": "Santa Gertrudes",
+                    "population": 27.381
+                },
+                {
+                    "name": "Santa Isabel",
+                    "population": 57.966
+                },
+                {
+                    "name": "Santa Lúcia",
+                    "population": 8.854
+                },
+                {
+                    "name": "Santa Maria da Serra",
+                    "population": 6.236
+                },
+                {
+                    "name": "Santa Mercedes",
+                    "population": 2.943
+                },
+                {
+                    "name": "Santana da Ponte Pensa",
+                    "population": 1.467
+                },
+                {
+                    "name": "Santana de Parnaíba",
+                    "population": 142.301
+                },
+                {
+                    "name": "Santa Rita d'Oeste",
+                    "population": 2.487
+                },
+                {
+                    "name": "Santa Rita do Passa Quatro",
+                    "population": 27.600
+                },
+                {
+                    "name": "Santa Rosa de Viterbo",
+                    "population": 26.753
+                },
+                {
+                    "name": "Santa Salete",
+                    "population": 1.552
+                },
+                {
+                    "name": "Santo Anastácio",
+                    "population": 20.866
+                },
+                {
+                    "name": "Santo André",
+                    "population": 721.368
+                },
+                {
+                    "name": "Santo Antônio da Alegria",
+                    "population": 6.977
+                },
+                {
+                    "name": "Santo Antônio de Posse",
+                    "population": 23.529
+                },
+                {
+                    "name": "Santo Antônio do Aracanguá",
+                    "population": 8.481
+                },
+                {
+                    "name": "Santo Antônio do Jardim",
+                    "population": 5.940
+                },
+                {
+                    "name": "Santo Antônio do Pinhal",
+                    "population": 6.827
+                },
+                {
+                    "name": "Santo Expedito",
+                    "population": 3.135
+                },
+                {
+                    "name": "Santópolis do Aguapeí",
+                    "population": 4.817
+                },
+                {
+                    "name": "Santos",
+                    "population": 433.656
+                },
+                {
+                    "name": "São Bento do Sapucaí",
+                    "population": 10.893
+                },
+                {
+                    "name": "São Bernardo do Campo",
+                    "population": 844.483
+                },
+                {
+                    "name": "São Caetano do Sul",
+                    "population": 161.957
+                },
+                {
+                    "name": "São Carlos",
+                    "population": 254.484
+                },
+                {
+                    "name": "São Francisco",
+                    "population": 2.817
+                },
+                {
+                    "name": "São João da Boa Vista",
+                    "population": 91.771
+                },
+                {
+                    "name": "São João das Duas Pontes",
+                    "population": 2.561
+                },
+                {
+                    "name": "São João de Iracema",
+                    "population": 1.932
+                },
+                {
+                    "name": "São João do Pau d'Alho",
+                    "population": 2.100
+                },
+                {
+                    "name": "São Joaquim da Barra",
+                    "population": 52.319
+                },
+                {
+                    "name": "São José da Bela Vista",
+                    "population": 8.960
+                },
+                {
+                    "name": "São José do Barreiro",
+                    "population": 4.144
+                },
+                {
+                    "name": "São José do Rio Pardo",
+                    "population": 55.124
+                },
+                {
+                    "name": "São José do Rio Preto",
+                    "population": 464.983
+                },
+                {
+                    "name": "São José dos Campos",
+                    "population": 729.737
+                },
+                {
+                    "name": "São Lourenço da Serra",
+                    "population": 15.978
+                },
+                {
+                    "name": "São Luiz do Paraitinga",
+                    "population": 10.690
+                },
+                {
+                    "name": "São Manuel",
+                    "population": 41.123
+                },
+                {
+                    "name": "São Miguel Arcanjo",
+                    "population": 33.002
+                },
+                {
+                    "name": "São Paulo",
+                    "population": 12.325232
+                },
+                {
+                    "name": "São Pedro",
+                    "population": 35.980
+                },
+                {
+                    "name": "São Pedro do Turvo",
+                    "population": 7.696
+                },
+                {
+                    "name": "São Roque",
+                    "population": 92.060
+                },
+                {
+                    "name": "São Sebastião",
+                    "population": 90.328
+                },
+                {
+                    "name": "São Sebastião da Grama",
+                    "population": 12.159
+                },
+                {
+                    "name": "São Simão",
+                    "population": 15.385
+                },
+                {
+                    "name": "São Vicente",
+                    "population": 368.355
+                },
+                {
+                    "name": "Sarapuí",
+                    "population": 10.390
+                },
+                {
+                    "name": "Sarutaiá",
+                    "population": 3.630
+                },
+                {
+                    "name": "Sebastianópolis do Sul",
+                    "population": 3.554
+                },
+                {
+                    "name": "Serra Azul",
+                    "population": 14.981
+                },
+                {
+                    "name": "Serrana",
+                    "population": 45.644
+                },
+                {
+                    "name": "Serra Negra",
+                    "population": 29.452
+                },
+                {
+                    "name": "Sertãozinho",
+                    "population": 127.142
+                },
+                {
+                    "name": "Sete Barras",
+                    "population": 12.780
+                },
+                {
+                    "name": "Severínia",
+                    "population": 17.661
+                },
+                {
+                    "name": "Silveiras",
+                    "population": 6.339
+                },
+                {
+                    "name": "Socorro",
+                    "population": 41.352
+                },
+                {
+                    "name": "Sorocaba",
+                    "population": 687.357
+                },
+                {
+                    "name": "Sud Mennucci",
+                    "population": 7.728
+                },
+                {
+                    "name": "Sumaré",
+                    "population": 286.211
+                },
+                {
+                    "name": "Suzano",
+                    "population": 300.559
+                },
+                {
+                    "name": "Suzanápolis",
+                    "population": 4.014
+                },
+                {
+                    "name": "Tabapuã",
+                    "population": 12.485
+                },
+                {
+                    "name": "Tabatinga",
+                    "population": 16.644
+                },
+                {
+                    "name": "Taboão da Serra",
+                    "population": 293.652
+                },
+                {
+                    "name": "Taciba",
+                    "population": 6.329
+                },
+                {
+                    "name": "Taguaí",
+                    "population": 14.141
+                },
+                {
+                    "name": "Taiaçu",
+                    "population": 6.320
+                },
+                {
+                    "name": "Taiúva",
+                    "population": 5.564
+                },
+                {
+                    "name": "Tambaú",
+                    "population": 23.232
+                },
+                {
+                    "name": "Tanabi",
+                    "population": 26.101
+                },
+                {
+                    "name": "Tapiraí",
+                    "population": 7.766
+                },
+                {
+                    "name": "Tapiratiba",
+                    "population": 12.950
+                },
+                {
+                    "name": "Taquaral",
+                    "population": 2.813
+                },
+                {
+                    "name": "Taquaritinga",
+                    "population": 57.364
+                },
+                {
+                    "name": "Taquarituba",
+                    "population": 23.256
+                },
+                {
+                    "name": "Taquarivaí",
+                    "population": 5.911
+                },
+                {
+                    "name": "Tarabai",
+                    "population": 7.540
+                },
+                {
+                    "name": "Tarumã",
+                    "population": 15.183
+                },
+                {
+                    "name": "Tatuí",
+                    "population": 122.967
+                },
+                {
+                    "name": "Taubaté",
+                    "population": 317.915
+                },
+                {
+                    "name": "Tejupá",
+                    "population": 4.491
+                },
+                {
+                    "name": "Teodoro Sampaio",
+                    "population": 23.273
+                },
+                {
+                    "name": "Terra Roxa",
+                    "population": 9.437
+                },
+                {
+                    "name": "Tietê",
+                    "population": 42.517
+                },
+                {
+                    "name": "Timburi",
+                    "population": 2.652
+                },
+                {
+                    "name": "Torre de Pedra",
+                    "population": 2.422
+                },
+                {
+                    "name": "Torrinha",
+                    "population": 10.056
+                },
+                {
+                    "name": "Trabiju",
+                    "population": 1.738
+                },
+                {
+                    "name": "Tremembé",
+                    "population": 47.714
+                },
+                {
+                    "name": "Três Fronteiras",
+                    "population": 5.832
+                },
+                {
+                    "name": "Tuiuti",
+                    "population": 6.977
+                },
+                {
+                    "name": "Tupã",
+                    "population": 65.570
+                },
+                {
+                    "name": "Tupi Paulista",
+                    "population": 15.583
+                },
+                {
+                    "name": "Turiúba",
+                    "population": 2.020
+                },
+                {
+                    "name": "Turmalina",
+                    "population": 1.696
+                },
+                {
+                    "name": "Ubarana",
+                    "population": 6.400
+                },
+                {
+                    "name": "Ubatuba",
+                    "population": 91.824
+                },
+                {
+                    "name": "Ubirajara",
+                    "population": 4.804
+                },
+                {
+                    "name": "Uchoa",
+                    "population": 10.151
+                },
+                {
+                    "name": "União Paulista",
+                    "population": 1.865
+                },
+                {
+                    "name": "Urânia",
+                    "population": 9.120
+                },
+                {
+                    "name": "Uru",
+                    "population": 1.153
+                },
+                {
+                    "name": "Urupês",
+                    "population": 13.888
+                },
+                {
+                    "name": "Valentim Gentil",
+                    "population": 13.532
+                },
+                {
+                    "name": "Valinhos",
+                    "population": 131.210
+                },
+                {
+                    "name": "Valparaíso",
+                    "population": 26.822
+                },
+                {
+                    "name": "Vargem",
+                    "population": 10.692
+                },
+                {
+                    "name": "Vargem Grande do Sul",
+                    "population": 43.110
+                },
+                {
+                    "name": "Vargem Grande Paulista",
+                    "population": 53.468
+                },
+                {
+                    "name": "Várzea Paulista",
+                    "population": 123.071
+                },
+                {
+                    "name": "Vera Cruz",
+                    "population": 10.823
+                },
+                {
+                    "name": "Vinhedo",
+                    "population": 80.111
+                },
+                {
+                    "name": "Viradouro",
+                    "population": 19.017
+                },
+                {
+                    "name": "Vista Alegre do Alto",
+                    "population": 8.989
+                },
+                {
+                    "name": "Vitória Brasil",
+                    "population": 1.846
+                },
+                {
+                    "name": "Votorantim",
+                    "population": 123.599
+                },
+                {
+                    "name": "Votuporanga",
+                    "population": 95.338
+                },
+                {
+                    "name": "Zacarias",
+                    "population": 2.752
+                },
+                {
+                    "name": "Chavantes",
+                    "population": 12.418
+                },
+                {
+                    "name": "Estiva Gerbi",
+                    "population": 11.407
+                }
+            ]
+        }
+    ]
+}

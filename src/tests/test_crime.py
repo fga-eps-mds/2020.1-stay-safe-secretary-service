@@ -2,16 +2,15 @@ import unittest
 
 from controllers import crime as controller
 from database.db import db
-from random import randint
 
 
 class TestCrime(unittest.TestCase):
     def setUp(self):
         # getting the db size before tests
         _data = db['crimes_df'].find({}, {'_id': False})
-        self.data_df = [data for data in _data]
+        self.data_df = list(_data)
         _data = db['crimes_sp'].find({}, {'_id': False})
-        self.data_sp = [data for data in _data]
+        self.data_sp = list(_data)
 
         self.db_df_len = len(self.data_df)
         self.db_sp_len = len(self.data_sp)
@@ -43,10 +42,19 @@ class TestCrime(unittest.TestCase):
             result, status = controller.get_all_crimes(secretary, None)
             self.assertEqual(status, 200)
             new_db_secretary_len = len(result)
-            if (secretary == 'df'):
+            if secretary == 'df':
                 self.assertEqual(new_db_secretary_len, self.db_df_len)
             else:
                 self.assertEqual(new_db_secretary_len, self.db_sp_len)
+
+    def test_get_crimes_from_invalid_secretary(self):
+        """
+        Testing get crimes from one invalid secretary
+        """
+        result, status = controller.get_all_crimes("mt", None)
+
+        self.assertEqual(status, 400)
+        self.assertEqual(result, "Parâmetro secretary inválido")
 
     def test_get_crimes_by_crime_nature(self):
         """
@@ -57,10 +65,16 @@ class TestCrime(unittest.TestCase):
         if self.db_df_len == 0 and self.db_sp_len == 0:
             self.assertEqual(result, [])
         else:
-            index = randint(0, 5)
-            cities = [
-                city for city in result[0]['cities'][index].keys()]
-            for city in cities:
+            for city in range(len(result[0]['cities'])):
                 self.assertEqual(
-                    result[0]['cities'][index][city][0]['crime_nature'],
+                    result[0]['cities'][city]['crimes'][0]['nature'],
                     'Roubo a Transeunte')
+
+    def test_get_crimes_by_invalid_crime_nature(self):
+        """
+        Testing get crimes by an invalid crime nature
+        """
+        result, status = controller.get_all_crimes(None, "Roubo a carga")
+
+        self.assertEqual(status, 400)
+        self.assertEqual(result, "Parâmetro crime inválido")

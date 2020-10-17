@@ -6,8 +6,17 @@ def get_all_crimes(secretary, crime):
     if (secretary and secretary not in ['sp', 'df']):
         return "Parâmetro secretary inválido", 400
 
-    valid_crimes = ['Latrocinio', 'Roubo a Transeunte', 'Roubo de Veiculo',
-                    'Roubo de Residencia', 'Estupro']
+    if secretary == 'df':
+        valid_crimes = ['Latrocínio', 'Roubo a Transeunte', 'Roubo de Veículo',
+                'Roubo de Residência', 'Estupro', 'Furto de Veículo', 'Furto a Transeunte']
+    elif secretary == 'sp':
+        valid_crimes = ['Latrocínio', 'Roubo de Veículo', 'Estupro',
+                'Furto de Veículo', 'Outros Roubos', 'Outros Furtos']
+    else:
+        valid_crimes = ['Latrocínio', 'Roubo a Transeunte', 'Roubo de Veículo',
+                'Roubo de Residência', 'Estupro', 'Furto de Veículo',
+                'Furto a Transeunte', 'Outros Roubos', 'Outros Furtos']
+
     if (crime and crime not in valid_crimes):
         return "Parâmetro crime inválido", 400
 
@@ -15,18 +24,17 @@ def get_all_crimes(secretary, crime):
     data = []
     if (secretary == "df" or secretary is None):
         _data = db['crimes_df'].find({}, {'_id': False})
-        data += [data for data in _data]
+        data += list(_data)
     if (secretary == "sp" or secretary is None):
         _data = db['crimes_sp'].find({}, {'_id': False})
-        data += [data for data in _data]
+        data += list(_data)
 
     # filtering the data
-    for year in range(len(data)):
-        for city in range(len(data[year]['cities'])):
-            city_name = list(data[year]['cities'][city].keys())[0]
-            data[year]['cities'][city][city_name] = \
+    for monthly_data in data:
+        for city in monthly_data['cities']:
+            city['crimes'] = \
                 list(filter(lambda x:
-                            (x['crime_nature'] == crime) if crime else True,
-                            data[year]['cities'][city][city_name]))
+                        (x['nature'] == crime) if crime else True,
+                        city['crimes']))
 
     return data, 200

@@ -15,8 +15,9 @@ CORS(crime_blueprint)
 def get_crimes():
     secretary = request.args.get('secretary')
     crime = request.args.get('crime')
+    city = request.args.get('city')
 
     if request.method == 'GET':
-        response, status = controller.get_all_crimes(secretary, crime)
+        response, status = controller.get_all_crimes(secretary, crime, city)
 
     return create_response(response, status)

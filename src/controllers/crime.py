@@ -1,40 +1,32 @@
 from database.db import db
+from utils.valid_crimes import valid_crimes_df, valid_crimes_sp
 
-
-def get_all_crimes(secretary, crime):
+def get_all_crimes(secretary, crime, city):
     # validate the params
-    if (secretary and secretary not in ['sp', 'df']):
+    if secretary and secretary not in ['sp', 'df']:
         return "Parâmetro secretary inválido", 400
 
-    if secretary == 'df':
-        valid_crimes = ['Latrocínio', 'Roubo a Transeunte', 'Roubo de Veículo',
-                'Roubo de Residência', 'Estupro', 'Furto de Veículo', 'Furto a Transeunte']
-    elif secretary == 'sp':
-        valid_crimes = ['Latrocínio', 'Roubo de Veículo', 'Estupro',
-                'Furto de Veículo', 'Outros Roubos', 'Outros Furtos']
-    else:
-        valid_crimes = ['Latrocínio', 'Roubo a Transeunte', 'Roubo de Veículo',
-                'Roubo de Residência', 'Estupro', 'Furto de Veículo',
-                'Furto a Transeunte', 'Outros Roubos', 'Outros Furtos']
-
-    if (crime and crime not in valid_crimes):
+    if crime and crime not in valid_crimes_df and crime not in valid_crimes_sp:
         return "Parâmetro crime inválido", 400
 
-    # getting the data
     data = []
-    if (secretary == "df" or secretary is None):
-        _data = db['crimes_df'].find({}, {'_id': False})
+    if (secretary == "df" or secretary is None) and (crime in valid_crimes_df or crime is None):
+        _data = db['crimes_df'].find(
+            { 'cities.name': city } if city else {},
+            { '_id': False, 'capture_data': True, 'period': True,
+                'cities.crimes': { '$slice': [valid_crimes_df.index(crime), 1] } if crime else True,
+                'cities': { '$elemMatch': { 'name': city } } if city else True,
+            }
+        )
         data += list(_data)
-    if (secretary == "sp" or secretary is None):
-        _data = db['crimes_sp'].find({}, {'_id': False})
+    if (secretary == "sp" or secretary is None) and (crime in valid_crimes_sp or crime is None):
+        _data = db['crimes_sp'].find(
+            { 'cities.name': city } if city else {},
+            { '_id': False, 'capture_data': True, 'period': True,
+                'cities.crimes': { '$slice': [valid_crimes_sp.index(crime), 1] } if crime else True,
+                'cities': { '$elemMatch': { 'name': city } } if city else True
+            }
+        )
         data += list(_data)
-
-    # filtering the data
-    for monthly_data in data:
-        for city in monthly_data['cities']:
-            city['crimes'] = \
-                list(filter(lambda x:
-                        (x['nature'] == crime) if crime else True,
-                        city['crimes']))
 
     return data, 200

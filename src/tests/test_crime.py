@@ -28,7 +28,7 @@ class TestCrime(unittest.TestCase):
         """
         Testing get all crimes
         """
-        result, status = controller.get_all_crimes(None, None)
+        result, status = controller.get_all_crimes(None, None, None)
         self.assertEqual(status, 200)
         new_db_len = len(result)
         self.assertEqual(new_db_len, self.db_len)
@@ -39,7 +39,7 @@ class TestCrime(unittest.TestCase):
         """
         secretarys = ['df', 'sp']
         for secretary in secretarys:
-            result, status = controller.get_all_crimes(secretary, None)
+            result, status = controller.get_all_crimes(secretary, None, None)
             self.assertEqual(status, 200)
             new_db_secretary_len = len(result)
             if secretary == 'df':
@@ -51,7 +51,7 @@ class TestCrime(unittest.TestCase):
         """
         Testing get crimes from one invalid secretary
         """
-        result, status = controller.get_all_crimes("mt", None)
+        result, status = controller.get_all_crimes("mt", None, None)
 
         self.assertEqual(status, 400)
         self.assertEqual(result, "Parâmetro secretary inválido")
@@ -60,7 +60,7 @@ class TestCrime(unittest.TestCase):
         """
         Testing get crimes by the crime nature
         """
-        result, status = controller.get_all_crimes(None, "Roubo a Transeunte")
+        result, status = controller.get_all_crimes(None, "Roubo a Transeunte", None)
         self.assertEqual(status, 200)
         if self.db_df_len == 0 and self.db_sp_len == 0:
             self.assertEqual(result, [])
@@ -74,7 +74,7 @@ class TestCrime(unittest.TestCase):
         """
         Testing get crimes by an invalid crime nature
         """
-        result, status = controller.get_all_crimes(None, "Roubo a carga")
+        result, status = controller.get_all_crimes(None, "Roubo a carga", None)
 
         self.assertEqual(status, 400)
         self.assertEqual(result, "Parâmetro crime inválido")

@@ -18,9 +18,10 @@ def get_crimes():
     city = request.args.get('city')
     initial_month = request.args.get('initial_month')
     final_month = request.args.get('final_month')
+    per_capita = request.args.get('per_capita')
 
     if request.method == 'GET':
         response, status = controller.get_all_crimes(secretary, crime, city,
-            initial_month, final_month)
+            initial_month, final_month, per_capita)
 
     return create_response(response, status)

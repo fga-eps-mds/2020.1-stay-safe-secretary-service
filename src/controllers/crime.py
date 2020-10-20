@@ -2,8 +2,9 @@ from database.db import db
 from utils.filters.valid_crimes import valid_crimes_df, valid_crimes_sp
 from utils.filters.valid_months import get_all_valid_months
 from utils.filters.crimes_filters import get_cumulative_amounts_of_crimes
+from utils.filters.crimes_filters import get_crimes_per_capita
 
-def get_all_crimes(secretary, crime, city, initial_month, final_month):
+def get_all_crimes(secretary, crime, city, initial_month, final_month, per_capita):
     # validate the params
     if secretary and secretary not in ['sp', 'df']:
         return "Parâmetro secretary inválido", 400
@@ -34,6 +35,9 @@ def get_all_crimes(secretary, crime, city, initial_month, final_month):
             data.append(get_cumulative_amounts_of_crimes(list(_data), initial_month, final_month))
         else:
             data += list(_data)
+
+        if per_capita:
+            data = get_crimes_per_capita(data, 'Distrito Federal')
     if (secretary == "sp" or secretary is None) and (crime in valid_crimes_sp or crime is None):
         _data = db['crimes_sp'].find(
             { '$and': [
@@ -49,6 +53,9 @@ def get_all_crimes(secretary, crime, city, initial_month, final_month):
             data.append(get_cumulative_amounts_of_crimes(list(_data), initial_month, final_month))
         else:
             data += list(_data)
+
+        if per_capita:
+            data = get_crimes_per_capita(data, 'São Paulo')
 
     if city and data == []:
         return "Parâmetro cidade inválido", 400

@@ -6,7 +6,7 @@
             "state": "Distrito Federal",
             "cities": [
                 {
-                    "name": "Ceilandia",
+                    "name": "Ceilândia",
                     "population": 443.824
                 },
                 {
@@ -14,7 +14,7 @@
                     "population": 244.960
                 },
                 {
-                    "name": "Plano Piloto",
+                    "name": "Brasília",
                     "population": 230.310
                 },
                 {
@@ -58,7 +58,7 @@
                     "population": 78.283
                 },
                 {
-                    "name": "Paranoa",
+                    "name": "Paranoá",
                     "population": 74.690
                 },
                 {
@@ -66,19 +66,19 @@
                     "population": 73.452
                 },
                 {
-                    "name": "Sobradinho",
+                    "name": "Sobradinho I",
                     "population": 71.165
                 },
                 {
-                    "name": "Itapoa",
+                    "name": "Itapoã",
                     "population": 64.747
                 },
                 {
-                    "name": "Brazlandia",
+                    "name": "Brazlândia",
                     "population": 64.027
                 },
                 {
-                    "name": "Jardim Botanico",
+                    "name": "Jardim Botânico",
                     "population": 58.138
                 },
                 {
@@ -86,7 +86,7 @@
                     "population": 55.258
                 },
                 {
-                    "name": "Riacho Fundo",
+                    "name": "Riacho Fundo I",
                     "population": 43.815
                 },
                 {
@@ -94,7 +94,7 @@
                     "population": 37.127
                 },
                 {
-                    "name": "SCIA",
+                    "name": "Estrutural SCIA",
                     "population": 36.770
                 },
                 {
@@ -106,7 +106,7 @@
                     "population": 30.320
                 },
                 {
-                    "name": "Nucleo Bandeirante",
+                    "name": "Núcleo Bandeirante",
                     "population": 24.019
                 },
                 {
@@ -114,7 +114,7 @@
                     "population": 23.058
                 },
                 {
-                    "name": "Candangolandia",
+                    "name": "Candangolândia",
                     "population": 16.338
                 },
                 {
@@ -122,7 +122,7 @@
                     "population": 9.742
                 },
                 {
-                    "name": "Varjao",
+                    "name": "Varjão",
                     "population": 8.829
                 },
                 {
@@ -132,7 +132,7 @@
             ]
         },
         {
-            "state": "Sao Paulo",
+            "state": "São Paulo",
             "cities": [
                 {
                     "name": "Adamantina",
@@ -807,7 +807,7 @@
                     "population": 276.535
                 },
                 {
-                    "name": "Embu-Guaçu",
+                    "name": "Embu Guaçú",
                     "population": 69.901
                 },
                 {
@@ -871,7 +871,7 @@
                     "population": 14.790
                 },
                 {
-                    "name": "Florínea",
+                    "name": "Florínia",
                     "population": 2.653
                 },
                 {
@@ -1147,7 +1147,7 @@
                     "population": 103.102
                 },
                 {
-                    "name": "Itaoca",
+                    "name": "Itaóca",
                     "population": 3.330
                 },
                 {

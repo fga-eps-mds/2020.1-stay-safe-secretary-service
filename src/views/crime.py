@@ -16,8 +16,11 @@ def get_crimes():
     secretary = request.args.get('secretary')
     crime = request.args.get('crime')
     city = request.args.get('city')
+    initial_month = request.args.get('initial_month')
+    final_month = request.args.get('final_month')
 
     if request.method == 'GET':
-        response, status = controller.get_all_crimes(secretary, crime, city)
+        response, status = controller.get_all_crimes(secretary, crime, city,
+            initial_month, final_month)
 
     return create_response(response, status)

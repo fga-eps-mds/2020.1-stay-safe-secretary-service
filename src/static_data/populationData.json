@@ -3,7 +3,7 @@
     "census": 2020,
     "populations" : [    
         {
-            "state": "Distrito Federal",
+            "state": "df",
             "cities": [
                 {
                     "name": "Ceilândia",
@@ -128,11 +128,19 @@
                 {
                     "name": "SIA",
                     "population": 2.621
+                },
+                {
+                    "name": "Arniqueira",
+                    "population": 45.851
+                },
+                {
+                    "name": "Sol Nascente",
+                    "population": 78.892
                 }
             ]
         },
         {
-            "state": "São Paulo",
+            "state": "sp",
             "cities": [
                 {
                     "name": "Adamantina",
@@ -568,7 +576,7 @@
                 },
                 {
                     "name": "Campinas",
-                    "population": 1.213792
+                    "population": 1213.792
                 },
                 {
                     "name": "Campo Limpo Paulista",
@@ -984,7 +992,7 @@
                 },
                 {
                     "name": "Guarulhos",
-                    "population": 1.392121
+                    "population": 1392.121
                 },
                 {
                     "name": "Guatapará",
@@ -2259,7 +2267,7 @@
                     "population": 27.600
                 },
                 {
-                    "name": "Santa Rosa de Viterbo",
+                    "name": "Santa Rosa do Viterbo",
                     "population": 26.753
                 },
                 {
@@ -2371,7 +2379,7 @@
                     "population": 15.978
                 },
                 {
-                    "name": "São Luiz do Paraitinga",
+                    "name": "São Luís do Paraitinga",
                     "population": 10.690
                 },
                 {
@@ -2384,7 +2392,7 @@
                 },
                 {
                     "name": "São Paulo",
-                    "population": 12.325232
+                    "population": 12325.232
                 },
                 {
                     "name": "São Pedro",
@@ -2539,7 +2547,7 @@
                     "population": 5.911
                 },
                 {
-                    "name": "Tarabai",
+                    "name": "Tarabaí",
                     "population": 7.540
                 },
                 {
@@ -2627,7 +2635,7 @@
                     "population": 4.804
                 },
                 {
-                    "name": "Uchoa",
+                    "name": "Uchôa",
                     "population": 10.151
                 },
                 {

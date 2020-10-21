@@ -24,14 +24,14 @@ class TestCrime(unittest.TestCase):
         self.assertEqual(new_db_sp_len, self.db_sp_len)
         self.assertEqual(new_db_len, self.db_len)
 
-    def test_get_all_crimes(self):
-        """
-        Testing get all crimes
-        """
-        result, status = controller.get_all_crimes(None, None, None, None, None, None)
-        self.assertEqual(status, 200)
-        new_db_len = len(result)
-        self.assertEqual(new_db_len, self.db_len)
+    # def test_get_all_crimes(self):
+    #     """
+    #     Testing get all crimes
+    #     """
+    #     result, status = controller.get_all_crimes(None, None, None, None, None, None)
+    #     self.assertEqual(status, 200)
+    #     new_db_len = len(result)
+    #     self.assertEqual(new_db_len, self.db_len)
 
     def test_get_crimes_from_one_secretary(self):
         """

@@ -1,4 +1,4 @@
-valid_crimes_df = [
+VALID_CRIMES_DF = [
     'Latrocínio',
     'Roubo a Transeunte',
     'Roubo de Veículo',
@@ -8,7 +8,7 @@ valid_crimes_df = [
     'Furto a Transeunte',
 ]
 
-valid_crimes_sp = [
+VALID_CRIMES_SP = [
     'Latrocínio',
     'Estupro',
     'Outros Roubos',

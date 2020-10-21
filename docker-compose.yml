@@ -25,6 +25,14 @@ crawler_crimes:
     - selenium
   stdin_open: true
   tty: true
+crawler_coordinates:
+  build: .
+  volumes:
+    - ./src/crawlers/coordinates:/stay-safe
+  links:
+    - db
+  stdin_open: true
+  tty: true
 selenium:
   image: selenium/standalone-firefox
   ports:

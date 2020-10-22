@@ -2,24 +2,21 @@ import json
 
 from utils.constants import ANNUAL_CRIMES_RANGE
 
-def get_cumulative_amounts_of_crimes(data, initial_month, final_month):
-    new_data = data[0]
-    new_data['period'] = f'{initial_month}-{final_month}'
-
+def get_cumulative_amounts_of_crimes(data):
     for i, _data in enumerate(data):
         if i > 0:
             for j, city in enumerate(_data['cities']):
                 for k, crime in enumerate(city['crimes']):
-                    new_data['cities'][j]['crimes'][k]['quantity'] += crime['quantity']
+                    data[0]['cities'][j]['crimes'][k]['quantity'] += crime['quantity']
 
-    return new_data
+    return data[0]
 
 def get_crimes_per_capita(data, secretary, months):
-    populationData = open('static_data/populationData.json',)
-    populationData = json.load(populationData)
+    population_data = open('static_data/populationData.json',)
+    population_data = json.load(population_data)
 
     populations = list(filter(lambda state: state['state'] == secretary,
-        populationData['populations']))
+        population_data['populations']))
 
     for _data in data:
         for city in _data['cities']:
@@ -39,17 +36,20 @@ def get_range(crime, secretary, months):
     if crime['quantity'] <= months / 12 * \
             annual_state_crimes_range['crimes_range'][crime['nature']][0]:
         return 1
-    elif crime['quantity'] <= months / 12 * \
+    if crime['quantity'] <= months / 12 * \
             annual_state_crimes_range['crimes_range'][crime['nature']][1]:
         return 2
-    elif crime['quantity'] <= months / 12 * \
+    if crime['quantity'] <= months / 12 * \
             annual_state_crimes_range['crimes_range'][crime['nature']][2]:
         return 3
-    elif crime['quantity'] <= months / 12 * \
+    if crime['quantity'] <= months / 12 * \
             annual_state_crimes_range['crimes_range'][crime['nature']][3]:
         return 4
-    elif crime['quantity'] <= months / 12 * \
+    if crime['quantity'] <= months / 12 * \
             annual_state_crimes_range['crimes_range'][crime['nature']][4]:
         return 5
-    else:
-        return 6
+
+    return 6
+
+def sort_crimes(crime):
+    return crime['quantity']

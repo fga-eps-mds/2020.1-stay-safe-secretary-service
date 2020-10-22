@@ -4,22 +4,28 @@ from utils.constants import VALID_CRIMES_DF, VALID_CRIMES_SP
 from utils.valid_months import get_all_valid_months
 from utils.amount_crimes import get_cumulative_amounts_of_crimes
 from utils.amount_crimes import get_crimes_per_capita
+from utils.amount_crimes import sort_crimes
+from utils.validators.validate_filters import validade_crime_filters
 
-def get_all_crimes(secretary, crime, city, initial_month, final_month, per_capita):
+def get_all_crimes(params, per_capita):
     # validate the params
-    if secretary and secretary not in ['sp', 'df']:
-        return "Parâmetro secretary inválido", 400
+    error = validade_crime_filters(params, per_capita)
+    if error:
+        return error, 400
 
-    if crime and crime not in VALID_CRIMES_DF and crime not in VALID_CRIMES_SP:
-        return "Parâmetro crime inválido", 400
+    secretary = params.get('secretary')
+    crime = params.get('crime')
+    city = params.get('city')
+    initial_month = params.get('initial_month')
+    final_month = params.get('final_month')
 
-    if (initial_month and final_month is None) or (final_month and initial_month is None):
-        return "Parâmetro initial_month ou final_month inválido", 400
-
-    quantity_months = 1
     valid_months = []
-    if initial_month is not None and final_month is not None:
-        valid_months = get_all_valid_months(initial_month, final_month)
+    quantity_months = 1
+
+    if initial_month and final_month:
+        valid_months = get_all_valid_months(initial_period=initial_month,
+            final_period=final_month)
+
         quantity_months = len(valid_months)
 
     data = []
@@ -34,18 +40,28 @@ def get_all_crimes(secretary, crime, city, initial_month, final_month, per_capit
                 'cities': { '$elemMatch': { 'name': city } } if city else True,
             }
         )
-        if initial_month is not None and final_month is not None:
-            data.append(get_cumulative_amounts_of_crimes(list(_data), initial_month, final_month))
-        else:
-            data += list(_data)
 
-        if per_capita == '1':
-            data = get_crimes_per_capita(data, 'df', quantity_months)
+        data_df = list(_data)
+        if len(data_df) > 0:
+            if len(valid_months) > 0:
+                months_data = []
+                cumulative_data = get_cumulative_amounts_of_crimes(data_df)
+                if quantity_months > 1:
+                    cumulative_data['period'] = f'{initial_month}-{final_month}'
 
-        for _data in data:
-            for city in _data['cities']:
-                city['crimes'].sort(reverse=True, key=sort_crimes)
-        
+                months_data.append(cumulative_data)
+                data_df = months_data
+
+            if per_capita == '1':
+                data_df = get_crimes_per_capita(data_df, 'df', quantity_months)
+
+            for _data in data_df:
+                for city in _data['cities']:
+                    city['crimes'].sort(reverse=True, key=sort_crimes)
+
+        if data_df != []:
+            data += data_df
+
     if (secretary == "sp" or secretary is None) and (crime in VALID_CRIMES_SP or crime is None):
         _data = db['crimes_sp'].find(
             { '$and': [
@@ -57,22 +73,26 @@ def get_all_crimes(secretary, crime, city, initial_month, final_month, per_capit
                 'cities': { '$elemMatch': { 'name': city } } if city else True
             }
         )
-        if initial_month is not None and final_month is not None:
-            data.append(get_cumulative_amounts_of_crimes(list(_data), initial_month, final_month))
-        else:
-            data += list(_data)
 
-        if per_capita == '1':
-            data = get_crimes_per_capita(data, 'sp', quantity_months)
+        data_sp = list(_data)
+        if len(data_sp) > 0:
+            if len(valid_months) > 0:
+                months_data = []
+                cumulative_data = get_cumulative_amounts_of_crimes(data_sp)
+                if quantity_months > 1:
+                    cumulative_data['period'] = f'{initial_month}-{final_month}'
 
-        for _data in data:
-            for city in _data['cities']:
-                city['crimes'].sort(reverse=True, key=sort_crimes)
+                months_data.append(cumulative_data)
+                data_sp = months_data
 
-    if city and data == []:
-        return "Parâmetro cidade inválido", 400
+            if per_capita == '1':
+                data_sp = get_crimes_per_capita(data_sp, 'sp', quantity_months)
+
+            for _data in data_sp:
+                for city in _data['cities']:
+                    city['crimes'].sort(reverse=True, key=sort_crimes)
+
+        if data_sp != []:
+            data += data_sp
 
     return data, 200
-
-def sort_crimes(crime):
-    return crime['quantity']

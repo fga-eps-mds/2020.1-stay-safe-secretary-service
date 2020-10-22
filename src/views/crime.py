@@ -11,15 +11,8 @@ CORS(crime_blueprint)
 
 @crime_blueprint.route('/')
 def get_crimes():
-    secretary = request.args.get('secretary')
-    crime = request.args.get('crime')
-    city = request.args.get('city')
-    initial_month = request.args.get('initial_month')
-    final_month = request.args.get('final_month')
-    per_capita = request.headers['per_capita']
-
     if request.method == 'GET':
-        response, status = controller.get_all_crimes(secretary, crime, city,
-            initial_month, final_month, per_capita)
+        response, status = controller.get_all_crimes(params=request.args,
+            per_capita=request.headers.get('per_capita'))
 
     return create_response(response, status)

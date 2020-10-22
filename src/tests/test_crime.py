@@ -39,7 +39,13 @@ class TestCrime(unittest.TestCase):
         """
         secretarys = ['df', 'sp']
         for secretary in secretarys:
-            result, status = controller.get_all_crimes(secretary, None, None, None, None, None)
+            result, status = controller.get_all_crimes({
+                    'secretary': secretary,
+                    'crime': None,
+                    'city': None,
+                    'initial_month': None,
+                    'final_month': None
+                }, None)
             self.assertEqual(status, 200)
             new_db_secretary_len = len(result)
             if secretary == 'df':
@@ -51,17 +57,28 @@ class TestCrime(unittest.TestCase):
         """
         Testing get crimes from one invalid secretary
         """
-        result, status = controller.get_all_crimes("mt", None, None, None, None, None)
+        result, status = controller.get_all_crimes({
+                'secretary': 'mt',
+                'crime': None,
+                'city': None,
+                'initial_month': None,
+                'final_month': None
+            }, None)
 
         self.assertEqual(status, 400)
-        self.assertEqual(result, "Parâmetro secretary inválido")
+        self.assertEqual(result, "Parâmetro secretary inválido.")
 
     def test_get_crimes_by_crime_nature(self):
         """
         Testing get crimes by the crime nature
         """
-        result, status = controller.get_all_crimes(None, "Roubo a Transeunte",
-            None, None, None, None)
+        result, status = controller.get_all_crimes({
+                'secretary': None,
+                'crime': 'Roubo a Transeunte',
+                'city': None,
+                'initial_month': None,
+                'final_month': None
+            }, None)
         self.assertEqual(status, 200)
         if self.db_df_len == 0 and self.db_sp_len == 0:
             self.assertEqual(result, [])
@@ -75,7 +92,13 @@ class TestCrime(unittest.TestCase):
         """
         Testing get crimes by an invalid crime nature
         """
-        result, status = controller.get_all_crimes(None, "Roubo a carga", None, None, None, None)
+        result, status = controller.get_all_crimes({
+                'secretary': None,
+                'crime': 'Roubo a Carga',
+                'city': None,
+                'initial_month': None,
+                'final_month': None
+            }, None)
 
         self.assertEqual(status, 400)
-        self.assertEqual(result, "Parâmetro crime inválido")
+        self.assertEqual(result, "Parâmetro crime inválido.")

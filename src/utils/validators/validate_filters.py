@@ -40,7 +40,8 @@ def validate_period(initial_period, final_period):
     if initial_month not in range(1, 13) or final_month not in range(1, 13):
         return False
 
-    if initial_year not in range(2018, current_year+1):
+    if initial_year not in range(2018, current_year+1) \
+            or final_year not in range(2018, current_year+1):
         return False
 
     if initial_month > final_month and initial_year == final_year:

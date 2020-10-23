@@ -1,3 +1,6 @@
+"""
+Available crimes of each secretary.
+"""
 VALID_CRIMES_DF = [
     'Latrocínio',
     'Roubo a Transeunte',
@@ -17,6 +20,11 @@ VALID_CRIMES_SP = [
     'Furto de Veículo',
 ]
 
+
+"""
+The range follows the pattern: 0 -> pos[0], pos[0] -> pos[1], ...
+and were calculated based on an annual amount of crimes / 100k inhabitants.
+"""
 ANNUAL_CRIMES_RANGE = [
     {
         'state': 'df',

@@ -25,11 +25,15 @@ def get_crimes_per_capita(data, secretary, months):
                     lambda x: x['name'] == city['name'], populations[0]['cities']))
                 if city_data != []:
                     crime['quantity'] = (crime['quantity'] / city_data[0]['population']) * 100
-                    crime['classification'] = get_range(crime, secretary, months)
+                    crime['classification'] = get_classification(crime, secretary, months)
 
     return data
 
-def get_range(crime, secretary, months):
+def get_classification(crime, secretary, months):
+    """
+    The classification is calculated according with the quantity of months of the data.
+    """
+
     annual_state_crimes_range = list(
         filter(lambda state: state['state'] == secretary, ANNUAL_CRIMES_RANGE))[0]
 

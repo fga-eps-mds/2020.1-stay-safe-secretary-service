@@ -1,4 +1,7 @@
 def get_all_valid_months(initial_period, final_period):
+    """
+    Return a list of all months in the given range.
+    """
     valid_months = []
 
     initial_period = initial_period.split('/')

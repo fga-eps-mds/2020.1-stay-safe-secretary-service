@@ -167,7 +167,7 @@ class TestCrime(unittest.TestCase):
 
     def test_get_crimes_invalid_per_capita(self):
         """
-        Testing get crimes with only one period
+        Testing get crimes with invalid per capita header
         """
         result, status = controller.get_all_crimes_df({}, per_capita='5')
 

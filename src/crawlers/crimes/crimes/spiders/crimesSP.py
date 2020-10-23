@@ -33,38 +33,43 @@ class CrimesSP(scrapy.Spider):
         """
         Function to get all crimes statistics and save on data attribute.
         """
+        # Define a wait of 60 seconds
+        wait = WebDriverWait(self.driver, 60)
+
         self.driver.get(response.url)
-        time.sleep(2)
+        wait.until(EC.text_to_be_present_in_element(
+            (By.XPATH, '//*[@id="conteudo_lbTitulo"]'),
+            'Dados Estatísticos do Estado de São Paulo'))
         
         cities_list = response.xpath('//*[@id="conteudo_ddlMunicipios"]//option')
-        time.sleep(2)
 
-        # Click on "Ocorrências Registradas por Mês" button
+        # Click on "Ocorrências Registradas por Mês" button and wait reload
         self.driver.find_element_by_xpath('//*[@id="conteudo_btnMensal"]').click()
-        time.sleep(2)
+        wait.until(EC.text_to_be_present_in_element(
+            (By.XPATH, '//*[@id="conteudo_lbInfo"]'),
+            'Ocorrências policiais registradas por mês'))
 
-        for city in range (1, len(cities_list)-1):
-            # Select "Todos" on "Regiões" dropdown
-            select_regions = Select(WebDriverWait(self.driver, 10).until(
-                EC.presence_of_element_located((
-                    By.XPATH, '//*[@id="conteudo_ddlRegioes"]'))))
+        for city in range (1, len(cities_list)):
+            # Select "Todos" on "Regiões" dropdown and wait reload
+            select_regions = Select(self.driver.find_element_by_xpath(
+                '//*[@id="conteudo_ddlRegioes"]'))
             select_regions.select_by_value('0')
-            time.sleep(2)
+            wait.until(EC.text_to_be_present_in_element(
+                (By.XPATH, '//*[@id="conteudo_lbTipo"]'), 'Regiões'))
             
-            # Select a city on "Munícipios" dropdown
-            select_cities = Select(WebDriverWait(self.driver, 10).until(
-                EC.presence_of_element_located((
-                    By.XPATH, '//*[@id="conteudo_ddlMunicipios"]'))))
+            # Select a city on "Munícipios" dropdown and wait reload
+            select_cities = Select(self.driver.find_element_by_xpath(
+                '//*[@id="conteudo_ddlMunicipios"]'))
             select_cities.select_by_value(str(city))
-            time.sleep(2)
+            wait.until(EC.text_to_be_present_in_element(
+                (By.XPATH, '//*[@id="conteudo_lbTipo"]'), 'Delegacias'))
 
             source = self.driver.page_source
             selector = Selector(text=source)
-            time.sleep(1)
+            time.sleep(3)
 
             city_name = selector.xpath(
                 '//*[@id="conteudo_lkMunicipio"]/text()').get().replace(' | ', '')
-            time.sleep(1)
 
             # Iterate over the three years of city data
             for table in range(0, 3):

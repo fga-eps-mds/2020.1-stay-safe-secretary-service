@@ -20,8 +20,8 @@ def validade_crime_filters(params, per_capita):
     elif (initial_month and final_month is None) or (final_month and initial_month is None):
         return "Parâmetros initial_month e final_month devem ser passados juntos."
 
-    if per_capita and per_capita != '1':
-        return "Parâmetro per_capita deve ser 1."
+    if per_capita and (per_capita != '1' and per_capita != '0'):
+        return "Parâmetro per_capita inválido."
 
     return None
 

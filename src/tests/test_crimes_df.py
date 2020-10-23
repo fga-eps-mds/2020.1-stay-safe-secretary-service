@@ -44,10 +44,12 @@ class TestCrime(unittest.TestCase):
             'crime': 'Roubo a Transeunte' }, None)
 
         self.assertEqual(status, 200)
-        for city in range(len(result[0]['cities'])):
-            self.assertEqual(
-                result[0]['cities'][city]['crimes'][0]['nature'],
-                'Roubo a Transeunte')
+
+        if self.db_df_len > 0:
+            for city in range(len(result[0]['cities'])):
+                self.assertEqual(
+                    result[0]['cities'][city]['crimes'][0]['nature'],
+                    'Roubo a Transeunte')
 
     def test_get_crimes_by_invalid_crime_nature(self):
         """
@@ -78,8 +80,9 @@ class TestCrime(unittest.TestCase):
 
         self.assertEqual(status, 200)
 
-        for city in result:
-            self.assertEqual(city['cities'][0]['name'], 'Águas Claras')
+        if self.db_df_len > 0:
+            for city in result:
+                self.assertEqual(city['cities'][0]['name'], 'Águas Claras')
 
     def test_get_crimes_from_one_invalid_city(self):
         """
@@ -99,8 +102,10 @@ class TestCrime(unittest.TestCase):
             'initial_month': '8/2019', 'final_month': '3/2020' }, None)
 
         self.assertEqual(status, 200)
-        self.assertEqual(len(result), 1)
-        self.assertEqual(result[0]['period'], '8/2019-3/2020')
+
+        if self.db_df_len > 0:
+            self.assertEqual(len(result), 1)
+            self.assertEqual(result[0]['period'], '8/2019-3/2020')
 
     def test_get_crimes_by_invalid_month(self):
         """
@@ -154,10 +159,11 @@ class TestCrime(unittest.TestCase):
 
         self.assertEqual(status, 200)
 
-        for period in result:
-            for city in period['cities']:
-                for crime in city['crimes']:
-                    self.assertTrue(1 <= crime['classification'] <= 6)
+        if self.db_df_len > 0:
+            for period in result:
+                for city in period['cities']:
+                    for crime in city['crimes']:
+                        self.assertTrue(1 <= crime['classification'] <= 6)
 
     def test_get_crimes_invalid_per_capita(self):
         """
@@ -166,4 +172,4 @@ class TestCrime(unittest.TestCase):
         result, status = controller.get_all_crimes_df({}, per_capita='5')
 
         self.assertEqual(status, 400)
-        self.assertEqual(result, 'Parâmetro per_capita deve ser 1.')
+        self.assertEqual(result, 'Parâmetro per_capita inválido.')

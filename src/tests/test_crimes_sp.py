@@ -31,7 +31,7 @@ class TestCrime(unittest.TestCase):
         Testing get crimes by the crime nature
         """
         result, status = controller.get_all_crimes_sp({
-            'crime': 'Outros Roubos' }, None)
+            'nature': 'Outros Roubos' }, None)
 
         self.assertEqual(status, 200)
 
@@ -46,7 +46,7 @@ class TestCrime(unittest.TestCase):
         Testing get crimes by an crime nature existing only in another secretary
         """
         result, status = controller.get_all_crimes_sp({
-                'crime': 'Furto a Transeunte' }, None)
+                'nature': 'Furto a Transeunte' }, None)
 
         self.assertEqual(status, 400)
         self.assertEqual(result, "Parâmetro crime inválido.")

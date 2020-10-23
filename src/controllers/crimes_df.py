@@ -13,7 +13,7 @@ def get_all_crimes_df(params, per_capita):
     if error:
         return error, 400
 
-    crime = params.get('crime')
+    crime = params.get('nature')
     city = params.get('city')
     initial_month = params.get('initial_month')
     final_month = params.get('final_month')

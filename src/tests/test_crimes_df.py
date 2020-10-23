@@ -41,7 +41,7 @@ class TestCrime(unittest.TestCase):
         Testing get crimes by the crime nature
         """
         result, status = controller.get_all_crimes_df({
-            'crime': 'Roubo a Transeunte' }, None)
+            'nature': 'Roubo a Transeunte' }, None)
 
         self.assertEqual(status, 200)
 
@@ -56,7 +56,7 @@ class TestCrime(unittest.TestCase):
         Testing get crimes by an invalid crime nature
         """
         result, status = controller.get_all_crimes_df({
-                'crime': 'Roubo a Carga' }, None)
+                'nature': 'Roubo a Carga' }, None)
 
         self.assertEqual(status, 400)
         self.assertEqual(result, "Parâmetro crime inválido.")
@@ -66,7 +66,7 @@ class TestCrime(unittest.TestCase):
         Testing get crimes by an crime nature existing only in another secretary
         """
         result, status = controller.get_all_crimes_df({
-                'crime': 'Outros Furtos' }, None)
+                'nature': 'Outros Furtos' }, None)
 
         self.assertEqual(status, 400)
         self.assertEqual(result, "Parâmetro crime inválido.")

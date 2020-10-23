@@ -10,7 +10,7 @@ crime_blueprint = Blueprint('crime', __name__, url_prefix='/api')
 CORS(crime_blueprint)
 
 
-@crime_blueprint.route('/')
+@crime_blueprint.route('/crimes/')
 def get_crimes():
     secretary = request.args.get('secretary')
 

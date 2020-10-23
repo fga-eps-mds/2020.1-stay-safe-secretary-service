@@ -4,7 +4,7 @@ from utils.constants import VALID_CRIMES_DF, VALID_CRIMES_SP
 
 def validade_crime_filters(params, per_capita):
     secretary = params.get('secretary')
-    crime = params.get('crime')
+    crime = params.get('nature')
     initial_month = params.get('initial_month')
     final_month = params.get('final_month')
 

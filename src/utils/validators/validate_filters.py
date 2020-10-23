@@ -21,7 +21,7 @@ def validade_crime_filters(params, per_capita):
         return "Parâmetros initial_month e final_month devem ser passados juntos."
 
     if per_capita and per_capita != '1':
-        return "Parâmetro per_capista inválido."
+        return "Parâmetro per_capita deve ser 1."
 
     return None
 
@@ -41,6 +41,12 @@ def validate_period(initial_period, final_period):
         return False
 
     if initial_year not in range(2018, current_year+1):
+        return False
+
+    if initial_month > final_month and initial_year == final_year:
+        return False
+
+    if initial_year > final_year:
         return False
 
     return True

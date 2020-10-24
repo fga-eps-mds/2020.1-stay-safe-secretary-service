@@ -8,7 +8,10 @@ def validade_crime_filters(params, per_capita):
     initial_month = params.get('initial_month')
     final_month = params.get('final_month')
 
-    if secretary and secretary not in ['sp', 'df']:
+    if secretary is None:
+        return "Parâmetro secretary obrigatório."
+
+    if secretary not in ['sp', 'df']:
         return "Parâmetro secretary inválido."
 
     if crime and crime not in VALID_CRIMES_DF and crime not in VALID_CRIMES_SP:
@@ -44,10 +47,8 @@ def validate_period(initial_period, final_period):
             or final_year not in range(2018, current_year+1):
         return False
 
-    if initial_month > final_month and initial_year == final_year:
-        return False
-
-    if initial_year > final_year:
+    if initial_month > final_month and initial_year == final_year \
+            or initial_year > final_year:
         return False
 
     return True

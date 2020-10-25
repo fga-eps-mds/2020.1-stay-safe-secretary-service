@@ -20,7 +20,7 @@
     "http"
   ],
   "paths": {
-    "/api/": {
+    "/api/crimes/": {
       "get": {
         "tags": [
           "crimes"
@@ -31,6 +31,13 @@
         ],
         "parameters": [
           {
+            "in": "header",
+            "name": "per_capita",
+            "type": "integer",
+            "description": "Should be passed 1 to get the crime / 100k inhabitants",
+            "required": false
+          },
+          {
             "in": "query",
             "name": "secretary",
             "type": "string",
@@ -39,11 +46,11 @@
               "sp"
             ],
             "description": "The secretary that will be filtered.",
-            "required": false
+            "required": true
           },
           {
             "in": "query",
-            "name": "crime",
+            "name": "nature",
             "type": "string",
             "enum": [
               "Latrocínio",
@@ -57,6 +64,27 @@
               "Outros Furtos"
             ],
             "description": "The crime that will be filtered.",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "city",
+            "type": "string",
+            "description": "The city that will be filtered.",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "initial_month",
+            "type": "string",
+            "description": "The initial period of the crime range -> ex 1/2020. Must be used together with final_month.",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "final_month",
+            "type": "string",
+            "description": "The final period of the crime range -> ex 12/2020. Must be used together with initial_month.",
             "required": false
           }
         ],
@@ -119,7 +147,7 @@
               "properties": {
                 "error": {
                   "type": "string",
-                  "description": "Invalid crime parameter or Invalid secretary parameter.",
+                  "description": "Invalid parameter.",
                   "example": "Parâmetro crime inválido"
                 }
               }

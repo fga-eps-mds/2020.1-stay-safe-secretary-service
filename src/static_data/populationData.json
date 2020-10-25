@@ -3,10 +3,10 @@
     "census": 2020,
     "populations" : [    
         {
-            "state": "Distrito Federal",
+            "state": "df",
             "cities": [
                 {
-                    "name": "Ceilandia",
+                    "name": "Ceilândia",
                     "population": 443.824
                 },
                 {
@@ -14,7 +14,7 @@
                     "population": 244.960
                 },
                 {
-                    "name": "Plano Piloto",
+                    "name": "Brasília",
                     "population": 230.310
                 },
                 {
@@ -58,7 +58,7 @@
                     "population": 78.283
                 },
                 {
-                    "name": "Paranoa",
+                    "name": "Paranoá",
                     "population": 74.690
                 },
                 {
@@ -66,19 +66,19 @@
                     "population": 73.452
                 },
                 {
-                    "name": "Sobradinho",
+                    "name": "Sobradinho I",
                     "population": 71.165
                 },
                 {
-                    "name": "Itapoa",
+                    "name": "Itapoã",
                     "population": 64.747
                 },
                 {
-                    "name": "Brazlandia",
+                    "name": "Brazlândia",
                     "population": 64.027
                 },
                 {
-                    "name": "Jardim Botanico",
+                    "name": "Jardim Botânico",
                     "population": 58.138
                 },
                 {
@@ -86,7 +86,7 @@
                     "population": 55.258
                 },
                 {
-                    "name": "Riacho Fundo",
+                    "name": "Riacho Fundo I",
                     "population": 43.815
                 },
                 {
@@ -94,7 +94,7 @@
                     "population": 37.127
                 },
                 {
-                    "name": "SCIA",
+                    "name": "Estrutural SCIA",
                     "population": 36.770
                 },
                 {
@@ -106,7 +106,7 @@
                     "population": 30.320
                 },
                 {
-                    "name": "Nucleo Bandeirante",
+                    "name": "Núcleo Bandeirante",
                     "population": 24.019
                 },
                 {
@@ -114,7 +114,7 @@
                     "population": 23.058
                 },
                 {
-                    "name": "Candangolandia",
+                    "name": "Candangolândia",
                     "population": 16.338
                 },
                 {
@@ -122,17 +122,25 @@
                     "population": 9.742
                 },
                 {
-                    "name": "Varjao",
+                    "name": "Varjão",
                     "population": 8.829
                 },
                 {
                     "name": "SIA",
                     "population": 2.621
+                },
+                {
+                    "name": "Arniqueira",
+                    "population": 45.851
+                },
+                {
+                    "name": "Sol Nascente",
+                    "population": 78.892
                 }
             ]
         },
         {
-            "state": "Sao Paulo",
+            "state": "sp",
             "cities": [
                 {
                     "name": "Adamantina",
@@ -568,7 +576,7 @@
                 },
                 {
                     "name": "Campinas",
-                    "population": 1.213792
+                    "population": 1213.792
                 },
                 {
                     "name": "Campo Limpo Paulista",
@@ -807,7 +815,7 @@
                     "population": 276.535
                 },
                 {
-                    "name": "Embu-Guaçu",
+                    "name": "Embu Guaçú",
                     "population": 69.901
                 },
                 {
@@ -871,7 +879,7 @@
                     "population": 14.790
                 },
                 {
-                    "name": "Florínea",
+                    "name": "Florínia",
                     "population": 2.653
                 },
                 {
@@ -984,7 +992,7 @@
                 },
                 {
                     "name": "Guarulhos",
-                    "population": 1.392121
+                    "population": 1392.121
                 },
                 {
                     "name": "Guatapará",
@@ -1147,7 +1155,7 @@
                     "population": 103.102
                 },
                 {
-                    "name": "Itaoca",
+                    "name": "Itaóca",
                     "population": 3.330
                 },
                 {
@@ -2259,7 +2267,7 @@
                     "population": 27.600
                 },
                 {
-                    "name": "Santa Rosa de Viterbo",
+                    "name": "Santa Rosa do Viterbo",
                     "population": 26.753
                 },
                 {
@@ -2371,7 +2379,7 @@
                     "population": 15.978
                 },
                 {
-                    "name": "São Luiz do Paraitinga",
+                    "name": "São Luís do Paraitinga",
                     "population": 10.690
                 },
                 {
@@ -2384,7 +2392,7 @@
                 },
                 {
                     "name": "São Paulo",
-                    "population": 12.325232
+                    "population": 12325.232
                 },
                 {
                     "name": "São Pedro",
@@ -2539,7 +2547,7 @@
                     "population": 5.911
                 },
                 {
-                    "name": "Tarabai",
+                    "name": "Tarabaí",
                     "population": 7.540
                 },
                 {
@@ -2627,7 +2635,7 @@
                     "population": 4.804
                 },
                 {
-                    "name": "Uchoa",
+                    "name": "Uchôa",
                     "population": 10.151
                 },
                 {

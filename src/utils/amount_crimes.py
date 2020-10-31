@@ -37,21 +37,10 @@ def get_classification(crime, secretary, months):
     annual_state_crimes_range = list(
         filter(lambda state: state['state'] == secretary, ANNUAL_CRIMES_RANGE))[0]
 
-    if crime['quantity'] <= months / 12 * \
-            annual_state_crimes_range['crimes_range'][crime['nature']][0]:
-        return 1
-    if crime['quantity'] <= months / 12 * \
-            annual_state_crimes_range['crimes_range'][crime['nature']][1]:
-        return 2
-    if crime['quantity'] <= months / 12 * \
-            annual_state_crimes_range['crimes_range'][crime['nature']][2]:
-        return 3
-    if crime['quantity'] <= months / 12 * \
-            annual_state_crimes_range['crimes_range'][crime['nature']][3]:
-        return 4
-    if crime['quantity'] <= months / 12 * \
-            annual_state_crimes_range['crimes_range'][crime['nature']][4]:
-        return 5
+    for index in range(0, 5):
+        if crime['quantity'] <= months / 12 * \
+                annual_state_crimes_range['crimes_range'][crime['nature']][index]:
+            return index + 1
 
     return 6
 

@@ -1,3 +1,4 @@
+<a href="https://codeclimate.com/github/fga-eps-mds/2020.1-stay-safe-secretary-service/maintainability"><img src="https://api.codeclimate.com/v1/badges/3e31de4ecd078d652b51/maintainability" /></a>
 # Secretary Service
 
 Secretary service of Stay Safe project

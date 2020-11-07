@@ -27,7 +27,7 @@ $ docker-compose run api coverage run -m pytest
 ### Run Sonarqube
 ```bash
 $ docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest
-$ docker run -ti -v $(pwd):/usr/src --link sonarqube newtmitch/sonar-scanner -Dsonar.projectName="Secretary Service"
+$ docker run -ti -v $(pwd):/usr/src --link sonarqube newtmitch/sonar-scanner -Dsonar.projectName="Secretary Service" -Dsonar.projectKey=secretaryservice
 ```
 
 #### To report results with Coverage

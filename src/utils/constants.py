@@ -3,12 +3,12 @@ Available crimes of each secretary.
 """
 VALID_CRIMES_DF = [
     'Latrocínio',
-    'Roubo a Transeunte',
+    'Roubo a Pedestre',
     'Roubo de Veículo',
     'Roubo de Residência',
     'Furto de Veículo',
     'Estupro',
-    'Furto a Transeunte',
+    'Furto a Pedestre',
 ]
 
 VALID_CRIMES_SP = [
@@ -30,12 +30,12 @@ ANNUAL_CRIMES_RANGE = [
         'state': 'df',
         'crimes_range': {
             'Latrocínio': [0, 1, 3, 6, 10],
-            'Roubo a Transeunte': [200, 400, 600, 1000, 1500],
+            'Roubo a Pedestre': [200, 400, 600, 1000, 1500],
             'Roubo de Veículo': [0, 10, 20, 50, 100],
             'Roubo de Residência': [0, 5, 10, 20, 50],
             'Furto de Veículo': [50, 100, 200, 500, 700],
             'Estupro': [20, 30, 40, 50, 70],
-            'Furto a Transeunte': [20, 50, 70, 90, 100],
+            'Furto a Pedestre': [20, 50, 70, 90, 100],
         }
     },
     {

@@ -12,7 +12,7 @@ Crimes Item to be processed, the item must follow the pattern below:
         period: '1/2020',
         monthly_data: [
             { 'nature': 'Latrocínio', 'quantity': 5 },
-            { 'nature': 'Roubo a Transeunte', 'quantity': 7 },
+            { 'nature': 'Roubo a Pedestre', 'quantity': 7 },
             { 'nature': 'Roubo de Veículo', 'quantity': 10 },
             ...
         ]

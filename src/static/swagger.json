@@ -54,12 +54,12 @@
             "type": "string",
             "enum": [
               "Latrocínio",
-              "Roubo a Transeunte",
+              "Roubo a Pedestre",
               "Roubo de Veículo",
               "Roubo de Residência",
               "Estupro",
               "Furto de Veículo",
-              "Furto a Transeunte",
+              "Furto a Pedestre",
               "Outros Roubos",
               "Outros Furtos"
             ],

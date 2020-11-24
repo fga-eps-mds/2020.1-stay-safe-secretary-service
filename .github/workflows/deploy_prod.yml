@@ -1,0 +1,25 @@
+name: CD PROD
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        
+      - name: deploy
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
+            cd /home/hellslimm/2020.1-stay-safe-secretary-service/
+            git pull origin develop
+            sudo docker-compose build
+            sudo docker-compose restart api
+          host: ${{ secrets.HOST_PROD }}
+          user: hellslimm
+          key: ${{ secrets.PROD_PRIVATE_KEY}}
+          args: "-tt"
